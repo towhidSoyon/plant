@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".activity.SignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_500sdp"
+            android:layout_marginTop="@dimen/_154sdp"
+            android:background="@drawable/frame_layout_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_145sdp"
+            android:layout_marginTop="-25dp"
+            android:src="@drawable/logo_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/frameLayout">
+
+        </ImageView>
+
+        <FrameLayout
+            android:id="@+id/layoutImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:background="@drawable/imageview_bg"
+                android:scaleType="centerCrop"
+                app:riv_oval="true">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/textAddImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Add Image"
+                android:textColor="@color/colorTextHint"
+                android:textSize="@dimen/_10ssp">
+
+            </TextView>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:background="@drawable/edit_text_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutImage">
+
+            <ImageView
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:alpha="0.6"
+                android:src="@drawable/user">
+
+            </ImageView>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:background="@color/colorAsh">
+
+            </View>
+
+            <EditText
+                android:id="@+id/signupName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="Full Name"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="@dimen/_13ssp">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/signupEmailLayout"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/edit_text_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameLayout">
+
+            <ImageView
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:alpha="0.6"
+                android:src="@drawable/email">
+
+            </ImageView>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:background="@color/colorAsh">
+
+            </View>
+
+            <EditText
+                android:id="@+id/signupEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="Email"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="@dimen/_13ssp">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/edit_text_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signupEmailLayout">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:alpha="0.6"
+                android:src="@drawable/lock">
+
+            </ImageView>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:background="@color/colorAsh">
+
+            </View>
+
+            <EditText
+                android:id="@+id/signupPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="Password"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="@dimen/_13ssp">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/confirmPasswordLayout"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/edit_text_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:alpha="0.6"
+                android:src="@drawable/lock">
+
+            </ImageView>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:background="@color/colorAsh">
+
+            </View>
+
+            <EditText
+                android:id="@+id/confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@null"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="Confirm password"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="@dimen/_13ssp">
+
+            </EditText>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signupButton"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/button_bg_2"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Signup"
+            android:textSize="@dimen/_21sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordLayout">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/bottomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Already have an account? Login"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signupButton">
+
+        </TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

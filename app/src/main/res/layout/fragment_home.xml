@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:background="@drawable/edit_text_bg_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/search">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Search"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_19sdp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/layout_choose_tree"
+        android:layout_width="@dimen/_284sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="@dimen/_31sdp"
+        android:background="@drawable/linear_layout_bg_1"
+        android:orientation="vertical"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView1">
+
+        <ImageView
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/logo_choose_tree">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Choose Tree"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_18ssp">
+
+        </TextView>
+
+        <View
+            android:layout_width="@dimen/_236sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/view_bg_1">
+
+        </View>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_suggest_tree"
+        android:layout_width="@dimen/_136sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/linear_layout_bg_2"
+        android:orientation="vertical"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintStart_toStartOf="@id/layout_choose_tree"
+        app:layout_constraintTop_toBottomOf="@id/layout_choose_tree">
+
+        <ImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/logo_suggest_tree">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Suggest Tree"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_16ssp">
+
+        </TextView>
+
+        <View
+            android:layout_width="@dimen/_101sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/view_bg_2">
+
+        </View>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_claim"
+        android:layout_width="@dimen/_136sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/linear_layout_bg_3"
+        android:orientation="vertical"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="@id/layout_choose_tree"
+        app:layout_constraintTop_toBottomOf="@id/layout_choose_tree">
+
+        <ImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/logo_complain">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Complain Deforestation"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_12ssp">
+
+        </TextView>
+
+        <View
+            android:layout_width="@dimen/_101sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:background="@drawable/view_bg_3">
+
+        </View>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

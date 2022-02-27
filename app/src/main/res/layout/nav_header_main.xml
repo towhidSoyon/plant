@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/navDrawerImage"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_91sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:background="@drawable/imageview_bg_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.makeramen.roundedimageview.RoundedImageView>
+
+    <TextView
+        android:id="@+id/navDrawerNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Rafidul Islam"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_23ssp"
+        app:layout_constraintStart_toStartOf="@id/navDrawerImage"
+        app:layout_constraintTop_toBottomOf="@id/navDrawerImage">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Address here"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="@id/navDrawerNameText"
+        app:layout_constraintTop_toBottomOf="@id/navDrawerNameText">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

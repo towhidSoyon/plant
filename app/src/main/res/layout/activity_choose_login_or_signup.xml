@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activity.ChooseLoginOrSignupActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_500sdp"
+        android:background="@drawable/frame_layout_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_145sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:src="@drawable/logo_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout">
+
+    </ImageView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        android:layout_width="@dimen/_235sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/button_bg_1"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Login"
+        android:textSize="@dimen/_21ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signupBtn"
+        android:layout_width="@dimen/_235sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:background="@drawable/button_bg_1"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="Signup"
+        android:textSize="@dimen/_21ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_22sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="All rights reserved by @plant"
+        android:textAlignment="center"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,45 +1,41 @@
 package com.example.plant.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.view.MenuItem;
 
 import com.example.plant.R;
+import com.example.plant.activity.fragment.AboutFragment;
+import com.example.plant.activity.fragment.BlogFragment;
+import com.example.plant.activity.fragment.ContactFragment;
+import com.example.plant.activity.fragment.HomeFragment;
 import com.example.plant.activity.utilities.Constants;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final float END_SCALE = 0.85f;
-    private AppBarConfiguration mAppBarConfiguration;
-    private NavController navController;
-    private DrawerLayout drawer;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
-    private CoordinatorLayout contentView;
+    private MaterialToolbar toolbar;
 
     private CircleImageView profileImage;
 
@@ -55,9 +51,50 @@ public class MainActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
+        if (firebaseAuth.getCurrentUser() == null){
+            startActivity(new Intent(getApplicationContext(),ChooseLoginOrSignupActivity.class));
+            finish();
+        }
+
         initToolbar();
 
-        initNavigation();
+        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+        navigationView.setCheckedItem(R.id.nav_home);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            Fragment temp;
+
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_home:
+                        temp = new HomeFragment();
+                        break;
+                    case R.id.nav_blog:
+                        temp = new BlogFragment();
+                        break;
+                    case R.id.nav_contacts:
+                        temp = new ContactFragment();
+                        break;
+                    case R.id.nav_about:
+                        temp = new AboutFragment();
+                        break;
+                    case R.id.nav_logout:
+                        firebaseAuth.signOut();
+                        startActivity(new Intent(getApplicationContext(),ChooseLoginOrSignupActivity.class));
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
 
     }
@@ -65,91 +102,25 @@ public class MainActivity extends AppCompatActivity {
     private void initToolbar() {
 
 
-        String currentUser = firebaseAuth.getCurrentUser().getUid().toString();
+        String currentUser = firebaseAuth.getCurrentUser().getUid();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         profileImage = findViewById(R.id.profileImage);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-            firebaseFirestore.collection(Constants.KEY_COLLECTION_USERS).document(currentUser).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if(task.isSuccessful()){
-                        String img = task.getResult().get("image").toString();
-                        byte[] bytes= Base64.decode(img,Base64.DEFAULT);
-                        Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0, bytes.length);
-                        profileImage.setImageBitmap(bitmap);
-                    }
-                }
-            });
-
-
-
-
-    }
-
-    private void initNavigation() {
-
-        drawer = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        contentView = findViewById(R.id.content_view);
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_blog, R.id.nav_contacts,
-                R.id.nav_about)
-                .setDrawerLayout(drawer)
-                .build();
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-
-        NavigationUI.setupWithNavController(navigationView, navController);
-
-
-
-        animateNavigationDrawer();
-    }
-
-    private void animateNavigationDrawer() {
-//        drawerLayout.setScrimColor(getResources().getColor(R.color.text_brown));
-        drawer.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+        firebaseFirestore.collection(Constants.KEY_COLLECTION_USERS).document(currentUser).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onDrawerSlide(View drawerView, float slideOffset) {
-
-                // Scale the View based on current slide offset
-                final float diffScaledOffset = slideOffset * (1 - END_SCALE);
-                final float offsetScale = 1 - diffScaledOffset;
-                contentView.setScaleX(offsetScale);
-                contentView.setScaleY(offsetScale);
-
-                // Translate the View, accounting for the scaled width
-                final float xOffset = drawerView.getWidth() * slideOffset;
-                final float xOffsetDiff = contentView.getWidth() * diffScaledOffset / 2;
-                final float xTranslation = xOffset - xOffsetDiff;
-                contentView.setTranslationX(xTranslation);
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    String img = task.getResult().get("image").toString();
+                    byte[] bytes = Base64.decode(img, Base64.DEFAULT);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    profileImage.setImageBitmap(bitmap);
+                }
             }
         });
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        }
-        else {
-            super.onBackPressed();
-        }
 
     }
 }

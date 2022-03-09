@@ -28,4 +28,6 @@ public class Constants {
     public static final String REMOTE_MSG_CONTENT_TYPE = "Content-Type";
     public static final String REMOTE_MSG_DATA = "data";
     public static final String REMOTE_MSG_REGISTRATION_IDS = "registration_ids";
+    public static final String KEY_PHONE_NUMBER = "phoneNumber";
+    public static final String KEY_LOCATION = "location";
 }

@@ -7,12 +7,17 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.plant.R;
 import com.example.plant.activity.fragment.AboutFragment;
@@ -51,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser() == null){
+        /*if (firebaseAuth.getCurrentUser() == null){
             startActivity(new Intent(getApplicationContext(),ChooseLoginOrSignupActivity.class));
             finish();
-        }
+        }*/
 
         initToolbar();
 
@@ -122,5 +127,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog();
+            }
+        });
+
+    }
+
+    public void showDialog() {
+
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialouge_box);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        LinearLayout viewProfile = dialog.findViewById(R.id.viewProfile);
+        LinearLayout editProfile = dialog.findViewById(R.id.editProfile);
+
+
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+
+            }
+        });
+
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                startActivity(new Intent(MainActivity.this,EditProfileActivity.class));
+            }
+        });
+
+        dialog.show();
     }
 }

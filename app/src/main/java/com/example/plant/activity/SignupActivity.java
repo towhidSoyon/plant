@@ -34,15 +34,19 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class SignupActivity extends AppCompatActivity {
 
     FrameLayout layoutImage;
     EditText signupName;
     EditText signupEmail;
+    EditText signupPhoneNumber;
+    EditText signupLocation;
     EditText signupPassword;
     EditText signupConfirmPassword;
 
-    RoundedImageView imageProfile;
+    CircleImageView imageProfile;
     TextView imageText;
 
     AppCompatButton signupButton;
@@ -68,11 +72,13 @@ public class SignupActivity extends AppCompatActivity {
 
                 String userName = signupName.getText().toString();
                 String email = signupEmail.getText().toString();
+                String phoneNumber = signupPhoneNumber.getText().toString();
+                String location = signupLocation.getText().toString();
                 String password = signupPassword.getText().toString();
                 String confirmPassword = signupConfirmPassword.getText().toString();
 
-              if (isValidSignUpDetails(userName,email,password,confirmPassword)){
-                    createUser(userName,email,password);
+              if (isValidSignUpDetails(userName,email,phoneNumber,location,password,confirmPassword)){
+                    createUser(userName,email,phoneNumber,location,password);
                }
 
             }
@@ -97,7 +103,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
 
-    private void createUser(String userName,String email, String password) {
+    private void createUser(String userName,String email, String phoneNumber,String location, String password) {
 
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -109,6 +115,8 @@ public class SignupActivity extends AppCompatActivity {
                     user.put(Constants.KEY_NAME, userName);
                     user.put(Constants.KEY_EMAIL, email);
                     user.put(Constants.KEY_PASSWORD, password);
+                    user.put(Constants.KEY_PHONE_NUMBER, phoneNumber);
+                    user.put(Constants.KEY_LOCATION, location);
                     user.put(Constants.KEY_IMAGE, encodedImage);
                     database.collection(Constants.KEY_COLLECTION_USERS).document(task.getResult().getUser().getUid()).set(user).
                             addOnSuccessListener(documentReference -> {
@@ -131,6 +139,8 @@ public class SignupActivity extends AppCompatActivity {
         layoutImage = findViewById(R.id.layoutImage);
         signupName = findViewById(R.id.signupName);
         signupEmail = findViewById(R.id.signupEmail);
+        signupPhoneNumber = findViewById(R.id.signupPhoneNumber);
+        signupLocation = findViewById(R.id.signupLocation);
         signupPassword = findViewById(R.id.signupPassword);
         signupConfirmPassword = findViewById(R.id.confirmPassword);
 
@@ -175,7 +185,7 @@ public class SignupActivity extends AppCompatActivity {
             }
     );
 
-    public Boolean isValidSignUpDetails(String userName, String email, String password, String confirmPassword){
+    public Boolean isValidSignUpDetails(String userName, String email, String phoneNumber, String location, String password, String confirmPassword){
         if(encodedImage == null){
             showToast("Select Profile Image");
             return false;
@@ -187,6 +197,12 @@ public class SignupActivity extends AppCompatActivity {
             return false;
         }else if ( !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             showToast("Enter Valid Email");
+            return false;
+        }else if ( phoneNumber.length()>11 ){
+            showToast("Enter valid Phone Number");
+            return false;
+        }else if (location.trim().isEmpty()){
+            showToast("Enter Location");
             return false;
         }else if (password.trim().isEmpty()){
             showToast("Enter Password");

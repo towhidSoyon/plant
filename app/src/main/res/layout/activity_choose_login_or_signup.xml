@@ -65,7 +65,7 @@
         android:layout_height="@dimen/_12sdp"
         android:layout_marginBottom="@dimen/_22sdp"
         android:fontFamily="@font/ubuntu_regular"
-        android:text="All rights reserved by @plant"
+        android:text="All rights reserved by plant"
         android:textAlignment="center"
         android:textSize="@dimen/_9ssp"
         app:layout_constraintBottom_toBottomOf="parent"

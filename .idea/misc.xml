@@ -7,6 +7,7 @@
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/button_bg_1.xml" value="0.3106837606837607" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/button_bg_2.xml" value="0.3106837606837607" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/cam.xml" value="0.3067510548523207" />
+        <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/contact_item_bg.xml" value="0.3067510548523207" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/edit_text_bg.xml" value="0.3067510548523207" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/edit_text_bg_2.xml" value="0.3067510548523207" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/edit_text_bg_3.xml" value="0.3067510548523207" />
@@ -30,6 +31,7 @@
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/app_bar_main.xml" value="0.29743589743589743" />
+        <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/contact_item.xml" value="0.29743589743589743" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/content_main.xml" value="0.29743589743589743" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/dialouge_box.xml" value="0.29743589743589743" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/layout/fragment_about.xml" value="0.29743589743589743" />

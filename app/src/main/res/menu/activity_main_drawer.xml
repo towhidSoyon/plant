@@ -20,7 +20,7 @@
             android:iconTint="@color/colorPrimary"/>
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/info"
+            android:icon="@drawable/info_logo"
             android:title="About"
             android:iconTint="@color/colorPrimary"/>
 

@@ -15,17 +15,17 @@
     </FrameLayout>
 
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/navDrawerImage"
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_91sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_60sdp"
         android:background="@drawable/imageview_bg_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </com.makeramen.roundedimageview.RoundedImageView>
+    </de.hdodenhof.circleimageview.CircleImageView>
 
     <TextView
         android:id="@+id/navDrawerNameText"
@@ -35,13 +35,14 @@
         android:fontFamily="@font/ubuntu_bold"
         android:text="Rafidul Islam"
         android:textColor="@color/Black"
-        android:textSize="@dimen/_23ssp"
+        android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toStartOf="@id/navDrawerImage"
         app:layout_constraintTop_toBottomOf="@id/navDrawerImage">
 
     </TextView>
 
     <TextView
+        android:id="@+id/navDrawerAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"

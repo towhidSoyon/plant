@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.BlogDetailsActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="-5dp"
+        android:background="@drawable/logo_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/blogDetailsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Title"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backArrow">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/blogDetailsImage"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_140sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:elevation="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/imageview_bg_3"
+        app:layout_constraintTop_toBottomOf="@id/blogDetailsTitle">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/blogDetailsAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Author"
+        android:textColor="@color/colorTextHint"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blogDetailsImage">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/blogDetailsAuthorName"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:text="Name here"
+        android:textColor="@color/colorTextHint"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blogDetailsAuthor">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/blogDetailsDate"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:text="Publisehd on: "
+        android:gravity="center"
+        android:textColor="@color/colorTextHint"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@id/blogDetailsAuthorName"
+        app:layout_constraintTop_toTopOf="@id/blogDetailsAuthorName"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </TextView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colorAsh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blogDetailsDate">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/layoutBlogDesc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_350sdp"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="This is a dummy text for testing whether this value is applicable for my desgin what i am expecting or not."
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_16ssp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

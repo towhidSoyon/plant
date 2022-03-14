@@ -17,6 +17,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -50,6 +50,7 @@ public class SignupActivity extends AppCompatActivity {
     TextView imageText;
 
     AppCompatButton signupButton;
+    ProgressBar progressBar;
     TextView bottomText;
 
     private String encodedImage;
@@ -105,6 +106,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private void createUser(String userName,String email, String phoneNumber,String location, String password) {
 
+        loading(true);
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -120,15 +122,19 @@ public class SignupActivity extends AppCompatActivity {
                     user.put(Constants.KEY_IMAGE, encodedImage);
                     database.collection(Constants.KEY_COLLECTION_USERS).document(task.getResult().getUser().getUid()).set(user).
                             addOnSuccessListener(documentReference -> {
+                                loading(false);
                                 showToast("Signup Successfully");
                     startActivity(new Intent(SignupActivity.this,LoginActivity.class));
+                    finish();
                             })
                             .addOnFailureListener(exception -> {
+                                loading(false);
                                 showToast(exception.getMessage());
 
                             });
 
                 } else {
+                    loading(false);
                     showToast(task.getException().getMessage());
                 }
             }
@@ -136,7 +142,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void findSection() {
-        layoutImage = findViewById(R.id.layoutImage);
+        layoutImage = findViewById(R.id.layoutBlogImage);
         signupName = findViewById(R.id.signupName);
         signupEmail = findViewById(R.id.signupEmail);
         signupPhoneNumber = findViewById(R.id.signupPhoneNumber);
@@ -145,9 +151,10 @@ public class SignupActivity extends AppCompatActivity {
         signupConfirmPassword = findViewById(R.id.confirmPassword);
 
         signupButton = findViewById(R.id.signupButton);
+        progressBar = findViewById(R.id.progressBar);
         bottomText = findViewById(R.id.bottomText);
 
-        imageProfile = findViewById(R.id.imageProfile);
+        imageProfile = findViewById(R.id.blogImage);
         imageText = findViewById(R.id.textAddImage);
     }
 
@@ -216,6 +223,16 @@ public class SignupActivity extends AppCompatActivity {
         }
         else {
             return true;
+        }
+    }
+
+    private void loading(Boolean isLoading){
+        if (isLoading){
+            signupButton.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
+        } else{
+            progressBar.setVisibility(View.INVISIBLE);
+            signupButton.setVisibility(View.VISIBLE);
         }
     }
 }

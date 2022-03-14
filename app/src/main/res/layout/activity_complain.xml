@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.ComplainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginTop="-5dp"
+            android:background="@drawable/logo_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/back"
+            android:backgroundTint="@color/Black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/chooseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="Please Choose"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backArrow">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/anonymousButton"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Stay Anonymous"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseText">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/identityButton"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Use Identity"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/anonymousButton">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <LinearLayout
+            android:id="@+id/identityLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/identityButton">
+
+            <TextView
+                android:id="@+id/identityNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:includeFontPadding="false"
+                android:text="User Name"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_15sdp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/identityPhoneText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:includeFontPadding="false"
+                android:text="Phone here"
+                android:textColor="@color/colorTextHint"
+                android:textSize="@dimen/_13sdp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/identityEmailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:includeFontPadding="false"
+                android:text="Email here"
+                android:textColor="@color/colorTextHint"
+                android:textSize="@dimen/_13sdp">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/submissionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/identityLayout">
+
+            <FrameLayout
+                android:id="@+id/layoutComplainImage"
+                android:layout_width="@dimen/_284sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/identityLayout">
+
+                <ImageView
+                    android:id="@+id/complainImage"
+                    android:layout_width="@dimen/_280sdp"
+                    android:layout_height="@dimen/_140sdp"
+                    android:background="@drawable/imageview_bg_3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/identityLayout">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/complainImageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:text="Click Here To Add Image"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="@dimen/_18ssp">
+
+                </TextView>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Location"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutComplainImage">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/complainLocationLayout"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/edit_text_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationText">
+
+                <ImageView
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:alpha="0.6"
+                    android:src="@drawable/location_logo">
+
+                </ImageView>
+
+                <View
+                    android:layout_width="@dimen/_2sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:background="@color/colorAsh">
+
+                </View>
+
+                <EditText
+                    android:id="@+id/complainLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@null"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:hint="Location"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:textColor="@color/Black"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="@dimen/_13ssp">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/complainDescText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Description"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/complainLocationLayout">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/complainDescription"
+                android:layout_width="@dimen/_284sdp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_bg"
+                android:inputType="textCapSentences|textMultiLine"
+                android:isScrollContainer="true"
+                android:maxLength="2000"
+                android:maxLines="4"
+                android:padding="5dp"
+                android:singleLine="false"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/complainDescText"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="358dp" />
+
+            <FrameLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:animateLayoutChanges="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/complainDescription">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/submitpButton"
+                    android:layout_width="@dimen/_280sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button_bg_2"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_21sdp">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:progressTint="@color/colorPrimary"
+                    android:visibility="invisible"></ProgressBar>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Plant">
         <activity
+            android:name=".activity.ComplainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BlogDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddBlogActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.EditProfileActivity"
             android:exported="false" />
         <activity

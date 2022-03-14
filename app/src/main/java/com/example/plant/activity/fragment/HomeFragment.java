@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.plant.R;
+import com.example.plant.activity.ComplainActivity;
 import com.example.plant.activity.EditProfileActivity;
 import com.example.plant.activity.ProfileActivity;
 import com.example.plant.activity.adapter.SliderAdapter;
@@ -77,7 +78,7 @@ public class HomeFragment extends Fragment {
         layoutComplainDeforestation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("Will be added soon");
+                startActivity(new Intent(getContext(), ComplainActivity.class));
             }
         });
 

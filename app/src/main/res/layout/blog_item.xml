@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:layout_marginBottom="@dimen/_7sdp"
+    android:background="@drawable/blog_item_bg">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/blogCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorDark"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/listBlogImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_190sdp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/placeholder_image" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    <View
+        android:id="@+id/imageCoverView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/image_cover"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/blogCard"
+        app:layout_constraintEnd_toEndOf="@id/blogCard"
+        app:layout_constraintStart_toStartOf="@id/blogCard">
+
+    </View>
+
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/imageCoverView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/listBlogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Blog Title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/listBlogTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/listAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Author: Developers"
+        android:textColor="@color/colorAsh"
+        android:textSize="@dimen/_14ssp"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/listAuthor"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/listBlogDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Quiz Description"
+        android:textColor="@color/Black"
+        android:textSize="16sp"
+        app:lineHeight="28dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colorAsh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listBlogDesc">
+
+    </View>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

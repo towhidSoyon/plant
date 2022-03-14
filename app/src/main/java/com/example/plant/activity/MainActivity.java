@@ -18,6 +18,7 @@ import android.util.Base64;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.plant.R;
 import com.example.plant.activity.fragment.AboutFragment;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }*/
 
+
+
         initToolbar();
 
         navigationView = findViewById(R.id.nav_view);
@@ -72,6 +76,47 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_home);
+
+        View navView =  navigationView.inflateHeaderView(R.layout.nav_header_main);
+
+        CircleImageView headerImage =  navView.findViewById(R.id.navDrawerImage);
+        TextView headerName = navView.findViewById(R.id.navDrawerNameText);
+        TextView headerAddress = navView.findViewById(R.id.navDrawerAddress);
+
+        String cUser = firebaseAuth.getCurrentUser().getUid();
+
+        firebaseFirestore.collection(Constants.KEY_COLLECTION_USERS).document(cUser).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    String img = task.getResult().get("image").toString();
+                    byte[] bytes = Base64.decode(img, Base64.DEFAULT);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    headerImage.setImageBitmap(bitmap);
+                }
+            }
+        });
+
+        firebaseFirestore.collection(Constants.KEY_COLLECTION_USERS).document(cUser).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    String userName = task.getResult().get("name").toString();
+                    headerName.setText(userName);
+                }
+            }
+        });
+
+        firebaseFirestore.collection(Constants.KEY_COLLECTION_USERS).document(cUser).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    String userAddress = task.getResult().get("location").toString();
+                    headerAddress.setText(userAddress);
+                }
+            }
+        });
+
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 

@@ -18,4 +18,12 @@ public class Constants {
     public static final String KEY_AVAILABILITY = "availability";
     public static final String KEY_LOCATION = "location";
     public static final String KEY_CONTACTS = "agriculturist";
+    public static final String KEY_TITLE = "title";
+    public static final String KEY_DESCRIPTION = "description";
+    public static final String KEY_DATE= "date";
+    public static final String KEY_BLOG_IMAGE= "blogImage";
+    public static final String KEY_COLLECTION_BLOGS = "blogs";
+    public static final String KEY_BLOG = "blog";
+    public static final String KEY_COLLECTION_COMPLAIN_WITH_IDENTITY = "complainWithIdentity";
+    public static final String KEY_COLLECTION_COMPLAIN = "complain";
 }

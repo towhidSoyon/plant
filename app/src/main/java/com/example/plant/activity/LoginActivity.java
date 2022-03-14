@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText emailText;
     EditText passwordText;
+    ProgressBar progressBar;
 
     AppCompatButton loginButton;
 
@@ -62,13 +64,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser(String email, String password) {
+        loading(true);
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    loading(false);
                     showToast("Logged In");
                     startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    finish();
                 }else {
+                    loading(false);
                     showToast(task.getException().getMessage());
                 }
             }
@@ -82,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         emailText = findViewById(R.id.loginEmail);
         passwordText = findViewById(R.id.loginPassword);
         loginButton = findViewById(R.id.loginButton);
+        progressBar =  findViewById(R.id.progressBar);
         bottomText = findViewById(R.id.forgotPassText);
 
     }
@@ -106,4 +113,14 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    private void loading(Boolean isLoading){
+        if (isLoading){
+            loginButton.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
+        } else{
+            progressBar.setVisibility(View.INVISIBLE);
+            loginButton.setVisibility(View.VISIBLE);
+        }
+    }
 }
+

@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.plant.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -19,11 +20,15 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     Animation anim;
 
+    FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         findSection();
         anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
@@ -33,10 +38,16 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
+               /* if (firebaseAuth.getCurrentUser() != null) {
 
-                Intent Intent = new Intent(SplashScreenActivity.this,ChooseLoginOrSignupActivity.class);
-                startActivity(Intent);
-                finish();
+                    Intent Intent = new Intent(SplashScreenActivity.this,MainActivity.class);
+                    startActivity(Intent);
+                    finish();
+                } else {*/
+                    Intent Intent = new Intent(SplashScreenActivity.this,ChooseLoginOrSignupActivity.class);
+                    startActivity(Intent);
+                    finish();
+                //}
             }
         }, 3000);
     }

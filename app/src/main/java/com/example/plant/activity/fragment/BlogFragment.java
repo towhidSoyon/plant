@@ -103,11 +103,11 @@ public class BlogFragment extends Fragment implements BlogAdapter.BlogListener {
         Toast.makeText(getContext(), Message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onBlogClicked(BlogList list) {
-        Intent intent=new Intent(getContext(), BlogDetailsActivity.class);
-        intent.putExtra(Constants.KEY_BLOG, list);
-        startActivity(intent);
 
+    @Override
+    public void onBlogClicked(BlogList blogList) {
+        Intent intent=new Intent(getContext(), BlogDetailsActivity.class);
+        intent.putExtra(Constants.KEY_BLOG, blogList);
+        startActivity(intent);
     }
 }

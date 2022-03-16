@@ -4,5 +4,5 @@ import java.io.Serializable;
 
 public class BlogList implements Serializable {
 
-    public String blogImage, title, author, description;
+    public String blogImage, title, author, description,date;
 }

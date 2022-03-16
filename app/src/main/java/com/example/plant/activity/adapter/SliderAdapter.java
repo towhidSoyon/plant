@@ -55,7 +55,6 @@ public class SliderAdapter extends
             @Override
             public void onClick(View v) {
 
-
             }
         });
     }

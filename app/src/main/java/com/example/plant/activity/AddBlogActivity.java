@@ -23,11 +23,16 @@ import android.widget.Toast;
 
 import com.example.plant.R;
 import com.example.plant.activity.utilities.Constants;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -50,10 +55,14 @@ public class AddBlogActivity extends AppCompatActivity {
 
     AppCompatButton postButton;
 
-    private String encodedImage;
+    //private String encodedImage;
+    private Uri uri= null;
+    private static final int GALLERY_CODE=2;
 
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
+
+    StorageReference mRef;
 
     String currentUserName;
 
@@ -65,6 +74,7 @@ public class AddBlogActivity extends AppCompatActivity {
         findSection();
 
         firebaseFirestore = FirebaseFirestore.getInstance();
+        mRef= FirebaseStorage.getInstance().getReference();
         firebaseAuth = FirebaseAuth.getInstance();
 
         String currentUser = firebaseAuth.getCurrentUser().getUid();
@@ -93,9 +103,9 @@ public class AddBlogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 textAdd.setVisibility(View.GONE);
-                Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                pickImage.launch(intent);
+                Intent galleryIntent =new Intent(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent,GALLERY_CODE);
             }
         });
 
@@ -114,24 +124,53 @@ public class AddBlogActivity extends AppCompatActivity {
 
     private void addBlog(String title, String desc, String date) {
 
-        FirebaseFirestore database= FirebaseFirestore.getInstance();
-        HashMap<String, Object> blog= new HashMap<>();
-        blog.put(Constants.KEY_NAME, currentUserName);
-        blog.put(Constants.KEY_TITLE, title);
-        blog.put(Constants.KEY_DESCRIPTION, desc);
-        blog.put(Constants.KEY_DATE, date);
-        blog.put(Constants.KEY_BLOG_IMAGE, encodedImage);
-        database.collection(Constants.KEY_COLLECTION_BLOGS).document().set(blog).
-                addOnSuccessListener(documentReference -> {
-                    showToast("Blog Posted");
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                })
-                .addOnFailureListener(exception -> {
-                    showToast(exception.getMessage());
+        if(uri != null) {
+            StorageReference filePath= mRef.child("Blog Images").child(uri.getLastPathSegment());
 
-                });
+            filePath.putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    if (task.isSuccessful())
+                    {
+                        task.getResult().getStorage().getDownloadUrl()
+                                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String downloadUrl= uri.toString();
+
+                                        FirebaseFirestore database = FirebaseFirestore.getInstance();
+                                        HashMap<String, Object> blog = new HashMap<>();
+                                        blog.put(Constants.KEY_NAME, currentUserName);
+                                        blog.put(Constants.KEY_TITLE, title);
+                                        blog.put(Constants.KEY_DESCRIPTION, desc);
+                                        blog.put(Constants.KEY_DATE, date);
+                                        blog.put(Constants.KEY_BLOG_IMAGE, downloadUrl);
+                                        database.collection(Constants.KEY_COLLECTION_BLOGS).document().set(blog).
+                                                addOnSuccessListener(documentReference -> {
+                                                    showToast("Blog Posted");
+                                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                                })
+                                                .addOnFailureListener(exception -> {
+                                                    showToast(exception.getMessage());
+
+                                                });
+                                    }
+                                });
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+            });
+        }
+
 
     }
+
+
+
 
     private void findSection() {
 
@@ -167,25 +206,26 @@ public class AddBlogActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == RESULT_OK){
                     if (result.getData() != null){
-                        Uri imageUri=result.getData().getData();
-                        try{
+                        uri=result.getData().getData();
+                        /*try{
                             InputStream inputStream=getContentResolver().openInputStream(imageUri);
                             Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
                             blogImage.setImageBitmap(bitmap);
                             encodedImage= encodeImage(bitmap);
                         }catch (FileNotFoundException e){
                             e.printStackTrace();
-                        }
+                        }*/
+                        blogImage.setImageURI(uri);
                     }
                 }
             }
     );
 
     public Boolean isValidDetails(String title, String desc){
-        if(encodedImage == null){
+        /*if(encodedImage == null){
             showToast("Select Profile Image");
             return false;
-        }else if (title.trim().isEmpty()){
+        }else*/ if (title.trim().isEmpty()){
             showToast("Enter Title");
             return false;
         }else if (desc.trim().isEmpty()){
@@ -193,6 +233,16 @@ public class AddBlogActivity extends AppCompatActivity {
             return false;
         }else {
             return true;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode== GALLERY_CODE && resultCode == RESULT_OK){
+            uri =data.getData();
+
+            blogImage.setImageURI(uri);
         }
     }
 }

@@ -49,8 +49,8 @@
 
     <ImageView
         android:id="@+id/blogDetailsImage"
-        android:layout_width="@dimen/_282sdp"
-        android:layout_height="@dimen/_140sdp"
+        android:layout_width="@dimen/_290sdp"
+        android:layout_height="@dimen/_180sdp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/_8sdp"
         android:elevation="@dimen/_3sdp"
@@ -133,6 +133,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/blogDetailsDesc"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.plant.R;
 import com.example.plant.activity.model.BlogList;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setBlogData(blogLists.get(position));
+
     }
 
     @Override
@@ -63,7 +65,8 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
 
         void setBlogData(BlogList blog){
 
-            blogListImage.setImageBitmap(getBlogImage(blog.blogImage));
+            Picasso.get().load(blog.blogImage).fit().centerInside().placeholder(R.drawable.placeholder_image).
+                    into(blogListImage);
             blogListTitle.setText(blog.title);
             blogListAuthor.setText(blog.author);
             blogListDesc.setText(blog.description);
@@ -73,13 +76,14 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ViewHolder> {
                     blogListener.onBlogClicked(blog);
                 }
             });
+
         }
 
-        private Bitmap getBlogImage(String encodedImage){
+        /*private Bitmap getBlogImage(String encodedImage){
             byte[] bytes= Base64.decode(encodedImage,Base64.DEFAULT);
             return BitmapFactory.decodeByteArray(bytes,0,bytes.length);
 
-        }
+        }*/
     }
 
     public interface BlogListener {

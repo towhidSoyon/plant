@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activity.ChooseTreeActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="-5dp"
+        android:background="@drawable/logo_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/instructionText"
+        app:layout_constraintTop_toBottomOf="@id/backArrow"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:text="Please fillup all the boxes below with correct information"
+        android:textSize="@dimen/_14ssp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/inputSoilText"
+        app:layout_constraintTop_toBottomOf="@id/instructionText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="Types of Soil"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputSoilLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputSoilText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/soil_icon">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/soilEditText"
+            android:layout_width="@dimen/_198sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Enter Types of Soil"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:focusable="false"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/dropdown">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/inputTemperatureText"
+        app:layout_constraintTop_toBottomOf="@id/inputSoilLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Temperature"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputTemperatureLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTemperatureText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/temperature">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/temperatureEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Enter Temperature"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="number"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/inputPlaceText"
+        app:layout_constraintTop_toBottomOf="@id/inputTemperatureLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Place"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputPlaceLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlaceText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/location_logo">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/placeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Ex: Upazilla/P.S. , District"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/inputWaterText"
+        app:layout_constraintTop_toBottomOf="@id/inputPlaceLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Water Supply"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputWaterLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputWaterText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/water_drop">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/waterEditText"
+            android:layout_width="@dimen/_198sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Amount of Water Supply"
+            android:focusable="false"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/dropdown">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/inputSunlightText"
+        app:layout_constraintTop_toBottomOf="@id/inputWaterLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Sunlight"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputSunlightLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputSunlightText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/sun_icon">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/sunlightEditText"
+            android:layout_width="@dimen/_198sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Amount of Sunlight"
+            android:imeOptions="actionNext"
+            android:focusable="false"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/dropdown">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/optionalText"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="wrap_content"
+        android:text="Optional"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputSunlightLayout" />
+
+    <View
+        app:layout_constraintStart_toEndOf="@id/optionalText"
+        app:layout_constraintTop_toTopOf="@id/optionalText"
+        app:layout_constraintBottom_toBottomOf="@id/optionalText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_2sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <TextView
+        android:id="@+id/inputPlantText"
+        app:layout_constraintTop_toBottomOf="@id/optionalText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Types of Plant"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputPlantLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlantText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:alpha="1"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/tree_icon">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/plantEditText"
+            android:layout_width="@dimen/_198sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Enter Types of Plant"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:focusable="false"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/dropdown">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/submitButtonLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlantLayout"
+        android:animateLayoutChanges="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/chooseTreeSubmitButton"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:background="@drawable/button_bg_2"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_21sdp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_gravity="center"
+            android:progressTint="@color/colorPrimary"
+            android:visibility="invisible"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            ></ProgressBar>
+
+    </FrameLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

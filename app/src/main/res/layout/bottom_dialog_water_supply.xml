@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/waterDialogContainer"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Select water supply level"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textSize="@dimen/_12ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorTextHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/lowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="LOW"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/averageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="AVERAGE"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/goodLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="GOOD"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+
+
+</LinearLayout>

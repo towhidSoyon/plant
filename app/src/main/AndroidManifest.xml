@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Plant">
         <activity
+            android:name=".activity.ChooseTreeResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ChooseTreeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SuggestedTreeDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SuggestedTreeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ComplainActivity"
             android:exported="false" />
         <activity

@@ -10,14 +10,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.plant.R;
+import com.example.plant.activity.ChooseTreeActivity;
 import com.example.plant.activity.ComplainActivity;
-import com.example.plant.activity.EditProfileActivity;
-import com.example.plant.activity.ProfileActivity;
+import com.example.plant.activity.SuggestedTreeActivity;
 import com.example.plant.activity.adapter.SliderAdapter;
 import com.example.plant.activity.model.SlideInfo;
 import com.google.firebase.database.DataSnapshot;
@@ -64,14 +63,14 @@ public class HomeFragment extends Fragment {
         layoutChooseTree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("Will be added soon");
+                startActivity(new Intent(getContext(), ChooseTreeActivity.class));
             }
         });
 
         layoutSuggestTree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("Will be added soon");
+                startActivity(new Intent(getContext(), SuggestedTreeActivity.class));
             }
         });
 

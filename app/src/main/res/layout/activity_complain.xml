@@ -284,7 +284,7 @@
                 tools:layout_editor_absoluteY="358dp" />
 
             <FrameLayout
-                android:id="@+id/buttonLayout"
+                android:id="@+id/submitButtonLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"

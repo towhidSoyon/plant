@@ -6,14 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.plant.R;
 import com.example.plant.activity.model.BlogList;
 import com.example.plant.activity.utilities.Constants;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 public class BlogDetailsActivity extends AppCompatActivity {
 
@@ -59,10 +56,10 @@ public class BlogDetailsActivity extends AppCompatActivity {
     private void findSection() {
 
         backArrow = findViewById(R.id.backArrow);
-        blogDetailsTitle = findViewById(R.id.blogDetailsTitle);
-        blogDetailsImage = findViewById(R.id.blogDetailsImage);
+        blogDetailsTitle = findViewById(R.id.suggestedDetailsTitle);
+        blogDetailsImage = findViewById(R.id.suggestedTreeDetailsImage);
         authorName = findViewById(R.id.blogDetailsAuthorName);
         publishedDate = findViewById(R.id.blogDetailsDate);
-        blogDesc = findViewById(R.id.blogDetailsDesc);
+        blogDesc = findViewById(R.id.suggestedTreeDetailsDesc);
     }
 }

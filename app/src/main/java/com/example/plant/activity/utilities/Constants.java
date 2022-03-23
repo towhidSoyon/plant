@@ -26,4 +26,12 @@ public class Constants {
     public static final String KEY_BLOG = "blog";
     public static final String KEY_COLLECTION_COMPLAIN_WITH_IDENTITY = "complainWithIdentity";
     public static final String KEY_COLLECTION_COMPLAIN = "complain";
+    public static final String KEY_COLLECTION_SUGGESTED_TREE = "suggestedTrees";
+    public static final String KEY_SUGGESTED_IMAGE = "suggestedImage";
+    public static final String KEY_PLANTS = "plants";
+    public static final String KEY_SUNLIGHT = "sunlight";
+    public static final String KEY_WATER_SUPPLY = "waterSupply";
+    public static final String KEY_PLACE = "place";
+    public static final String KEY_TEMPERATURE = "temperature";
+    public static final String KEY_SOIL = "soil";
 }

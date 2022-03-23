@@ -139,7 +139,7 @@
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/buttonLayout"
+            android:id="@+id/submitButtonLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/passwordLayout"
@@ -181,7 +181,7 @@
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonLayout">
+            app:layout_constraintTop_toBottomOf="@id/submitButtonLayout">
 
         </TextView>
 

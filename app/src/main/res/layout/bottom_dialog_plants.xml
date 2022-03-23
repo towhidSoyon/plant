@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/plantDialogContainer"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Types of Plant"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textSize="@dimen/_12ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorTextHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/fruitLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="FRUITS"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/flowerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="FLOWERS"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/medicineLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="MEDICINE"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/economicalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="ECONOMICAL"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+    <LinearLayout
+        android:id="@+id/allLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="All"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_13sdp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:background="@color/colorAsh">
+
+    </View>
+
+
+</LinearLayout>

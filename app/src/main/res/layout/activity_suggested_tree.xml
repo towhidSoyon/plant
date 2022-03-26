@@ -1,56 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SuggestedTreeActivity"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    tools:context=".activity.SuggestedTreeActivity">
 
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="@dimen/_110sdp"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_marginTop="-5dp"
-        android:background="@drawable/logo_one"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/backArrow"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/back"
-        android:backgroundTint="@color/Black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>
-
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/backArrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_7sdp"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/suggestedTreeRecyclerView"
-            android:padding="@dimen/_7sdp"
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginTop="-5dp"
+            android:background="@drawable/logo_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/back"
+            android:backgroundTint="@color/Black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <!--<LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/backArrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_7sdp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/suggestedTreeRecyclerView"
+                android:padding="@dimen/_7sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
 
-    </LinearLayout>
+        </LinearLayout>-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMedicinePlant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Medicine Plant"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backArrow">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonACPlant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Suitable Plants for AC Room"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonMedicinePlant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonFruitPlant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Fruit Plant"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonACPlant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonFlowerPlant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Flower Plant"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonFruitPlant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2Plant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="button2Plant"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonFlowerPlant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3Plant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="button3Plant"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button2Plant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4Plant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="button4"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button3Plant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button5Plant"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button_bg_3"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="button5"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button4Plant">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -34,4 +34,9 @@ public class Constants {
     public static final String KEY_PLACE = "place";
     public static final String KEY_TEMPERATURE = "temperature";
     public static final String KEY_SOIL = "soil";
+    public static final String KEY_MEDICINE_PLANT = "Medicine Plant";
+    public static final String KEY_AC_PLANT = "AC Plant";
+    public static final String KEY_FRUIT_PLANT = "Fruit Plant";
+    public static final String KEY_FLOWER_PLANT = "Flower Plant";
+    public static final String KEY_SUGGESTED_TREE_RESULT = "suggestedTreeResult";
 }

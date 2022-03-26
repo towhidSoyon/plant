@@ -1,6 +1,7 @@
 package com.example.plant.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,19 +15,32 @@ import com.example.plant.R;
 import com.example.plant.activity.adapter.SuggestedTreeAdapter;
 import com.example.plant.activity.model.SuggestedTree;
 import com.example.plant.activity.utilities.Constants;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuggestedTreeActivity extends AppCompatActivity implements SuggestedTreeAdapter.SuggestedTreeListener {
+public class SuggestedTreeActivity extends AppCompatActivity  {
 
-    private RecyclerView suggestedTreeRecyclerView;
+    /*private RecyclerView suggestedTreeRecyclerView;*/
 
     ImageView backArrow;
 
+    AppCompatButton medicinePlantButton;
+    AppCompatButton acPlantButton;
+    AppCompatButton fruitPlantButton;
+    AppCompatButton flowerPlantButton;
+    AppCompatButton b2PlantButton;
+    AppCompatButton b3PlantButton;
+    AppCompatButton b4PlantButton;
+    AppCompatButton b5PlantButton;
+
     FirebaseFirestore firebaseFirestore;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +53,82 @@ public class SuggestedTreeActivity extends AppCompatActivity implements Suggeste
 
         backArrow.setOnClickListener(view -> onBackPressed());
 
-        getSuggestedTree();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        databaseReference = firebaseDatabase.getReference();
+
+        /*getSuggestedTree();*/
+
+        medicinePlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, medicinePlantButton.getText().toString() );
+                startActivity(intent);
+
+            }
+        });
+
+        acPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, acPlantButton.getText().toString() );
+                startActivity(intent);
+
+            }
+        });
+
+        fruitPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, fruitPlantButton.getText().toString() );
+                startActivity(intent);
+            }
+        });
+
+        flowerPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showToast("Will be added soon");
+            }
+        });
+
+        b2PlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showToast("Will be added soon");
+            }
+        });
+
+        b3PlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showToast("Will be added soon");
+            }
+        });
+
+        b4PlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showToast("Will be added soon");
+            }
+        });
+
+        b5PlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showToast("Will be added soon");
+            }
+        });
 
 
     }
 
-    private void getSuggestedTree() {
+  /*  private void getSuggestedTree() {
 
         firebaseFirestore.collection(Constants.KEY_COLLECTION_SUGGESTED_TREE)
                 .get()
@@ -72,12 +156,20 @@ public class SuggestedTreeActivity extends AppCompatActivity implements Suggeste
                         showToast(task.getException().getMessage().toString());
                     }
                 });
-    }
+    }*/
 
     private void findSection() {
 
-        suggestedTreeRecyclerView = findViewById(R.id.suggestedTreeRecyclerView);
+        /*suggestedTreeRecyclerView = findViewById(R.id.suggestedTreeRecyclerView);*/
         backArrow = findViewById(R.id.backArrow);
+        medicinePlantButton = findViewById(R.id.buttonMedicinePlant);
+        acPlantButton = findViewById(R.id.buttonACPlant);
+        fruitPlantButton = findViewById(R.id.buttonFruitPlant);
+        flowerPlantButton = findViewById(R.id.buttonFlowerPlant);
+        b2PlantButton = findViewById(R.id.button2Plant);
+        b3PlantButton = findViewById(R.id.button3Plant);
+        b4PlantButton = findViewById(R.id.button4Plant);
+        b5PlantButton = findViewById(R.id.button5Plant);
     }
 
 
@@ -85,10 +177,10 @@ public class SuggestedTreeActivity extends AppCompatActivity implements Suggeste
         Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
+    /*@Override
     public void onSuggestedTreeClicked(SuggestedTree suggestedTreeList) {
         Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
         intent.putExtra(Constants.KEY_COLLECTION_SUGGESTED_TREE, suggestedTreeList);
         startActivity(intent);
-    }
+    }*/
 }

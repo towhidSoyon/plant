@@ -56,7 +56,7 @@ public class BlogDetailsActivity extends AppCompatActivity {
     private void findSection() {
 
         backArrow = findViewById(R.id.backArrow);
-        blogDetailsTitle = findViewById(R.id.suggestedDetailsTitle);
+        blogDetailsTitle = findViewById(R.id.suggestedTreeDetailsTitle);
         blogDetailsImage = findViewById(R.id.suggestedTreeDetailsImage);
         authorName = findViewById(R.id.blogDetailsAuthorName);
         publishedDate = findViewById(R.id.blogDetailsDate);

@@ -123,10 +123,12 @@
         android:id="@+id/layoutSuggestedTreeDesc"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_350sdp"
-        app:layout_constraintTop_toBottomOf="@id/divider"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="28dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -134,19 +136,27 @@
 
             <TextView
                 android:id="@+id/suggestedTreeDetailsDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntu_regular"
                 android:text="This is a dummy text for testing whether this value is applicable for my desgin what i am expecting or not."
                 android:textColor="@color/Black"
-                android:textSize="@dimen/_16ssp"
-                android:fontFamily="@font/ubuntu_regular"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:textSize="@dimen/_16ssp">
 
             </TextView>
+
+
         </ScrollView>
 
     </LinearLayout>
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

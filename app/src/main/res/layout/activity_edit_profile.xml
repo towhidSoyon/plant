@@ -101,6 +101,7 @@
                     android:drawableLeft="@drawable/profile_logo"
                     android:drawableRight="@drawable/edit"
                     android:drawablePadding="@dimen/_13sdp"
+                    android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="Towhid Soyon">
 
@@ -123,6 +124,7 @@
                     android:drawableLeft="@drawable/mail"
                     android:drawableRight="@drawable/edit"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="towhid12728@gmail.com">
 
@@ -145,6 +147,7 @@
                     android:drawableLeft="@drawable/call_black"
                     android:drawableRight="@drawable/edit"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="01766755346">
 
@@ -167,6 +170,7 @@
                     android:drawableLeft="@drawable/location_logo"
                     android:drawableRight="@drawable/edit"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="Dhaka, Bangladesh">
 

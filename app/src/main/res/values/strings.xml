@@ -6,4 +6,20 @@
     <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_identity_will_be_hidden">Your identity will be hidden!</string>
+    <string name="details">
+        Basically my full name is Towhidul Islam Sayon as my certificate. But for the sake of simplicity I use Towhid Soyon
+        on all of my social sites. I am an Android Developer. For the last two years I am working on this sector. I have some proficiency in JAVA
+         and that is why I choose this as my career.
+
+        Right now I am fulfilling my B.Sc CSE Degree from Daffodil International University. And completed my HSC from Govt. Science College.
+        Basically The main motivation is to build this app is actually to provide people the right solution for tree plantation. Planting trees
+        without knowing its benefits will result in nothing. As a result to find a solution of this problem I made this app.
+
+        Beside these, to make this app my Final year Defence supervisor Respected JA Polin Maam (Lecturer at DIU) played a vital role. She always
+        guided me towards the best way to achieve success. I will be ever grateful to her.
+
+        This project is also a part of my final Year Defence, So yeah that is all about me.
+
+    </string>
 </resources>

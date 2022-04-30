@@ -33,6 +33,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -90,9 +91,10 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     String img = task.getResult().get("image").toString();
-                    byte[] bytes = Base64.decode(img, Base64.DEFAULT);
+                    /*byte[] bytes = Base64.decode(img, Base64.DEFAULT);
                     Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    headerImage.setImageBitmap(bitmap);
+                    headerImage.setImageBitmap(bitmap);*/
+                    Picasso.get().load(img).into(headerImage);
                 }
             }
         });
@@ -139,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_logout:
                         firebaseAuth.signOut();
                         startActivity(new Intent(getApplicationContext(),ChooseLoginOrSignupActivity.class));
+                        finish();
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -165,9 +168,10 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     String img = task.getResult().get("image").toString();
-                    byte[] bytes = Base64.decode(img, Base64.DEFAULT);
+                    /*byte[] bytes = Base64.decode(img, Base64.DEFAULT);
                     Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    profileImage.setImageBitmap(bitmap);
+                    profileImage.setImageBitmap(bitmap);*/
+                    Picasso.get().load(img).into(profileImage);
                 }
             }
         });

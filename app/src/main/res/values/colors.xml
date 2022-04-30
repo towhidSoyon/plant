@@ -5,6 +5,7 @@
     <color name="colorPrimaryDark">#4b830d</color>
     <color name="colorBackground">#E5E5E5</color>
     <color name="colorBlue">#4298B3</color>
+    <color name="colorWeather">#E7EEF4</color>
     <color name="colorLightBlue">#DFF0FF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Black">#000000</color>
@@ -14,4 +15,6 @@
     <color name="colorAsh">#C4C4C4</color>
     <color name="colorTextHint">#7B7B7B</color>
     <color name="colorDark">#111111</color>
+
+    <color name="transparent">#00000000</color>
 </resources>

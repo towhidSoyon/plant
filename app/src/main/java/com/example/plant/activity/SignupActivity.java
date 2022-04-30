@@ -24,10 +24,14 @@ import android.widget.Toast;
 import com.example.plant.R;
 import com.example.plant.activity.utilities.Constants;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -53,9 +57,14 @@ public class SignupActivity extends AppCompatActivity {
     ProgressBar progressBar;
     TextView bottomText;
 
-    private String encodedImage;
+    private Uri uri = null;
+
+    private static final int GALLERY_CODE = 2;
+
+    /*private String encodedImage;*/
 
     FirebaseAuth mAuth;
+    StorageReference mRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +73,7 @@ public class SignupActivity extends AppCompatActivity {
         findSection();
 
         mAuth = FirebaseAuth.getInstance();
-
+        mRef = FirebaseStorage.getInstance().getReference();
 
 
         signupButton.setOnClickListener(new View.OnClickListener() {
@@ -78,9 +87,9 @@ public class SignupActivity extends AppCompatActivity {
                 String password = signupPassword.getText().toString();
                 String confirmPassword = signupConfirmPassword.getText().toString();
 
-              if (isValidSignUpDetails(userName,email,phoneNumber,location,password,confirmPassword)){
-                    createUser(userName,email,phoneNumber,location,password);
-               }
+                if (isValidSignUpDetails(userName, email, phoneNumber, location, password, confirmPassword)) {
+                    createUser(userName, email, phoneNumber, location, password);
+                }
 
             }
         });
@@ -88,54 +97,77 @@ public class SignupActivity extends AppCompatActivity {
         layoutImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                pickImage.launch(intent);
+                imageText.setVisibility(View.GONE);
+                Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, GALLERY_CODE);
             }
         });
 
         bottomText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this,LoginActivity.class);
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
     }
 
 
-    private void createUser(String userName,String email, String phoneNumber,String location, String password) {
+    private void createUser(String userName, String email, String phoneNumber, String location, String password) {
 
         loading(true);
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+            public void onComplete(@NonNull Task<AuthResult> task1) {
+                if (task1.isSuccessful()) {
+                    if (uri != null) {
+                        StorageReference filePath = mRef.child("User Images").child(uri.getLastPathSegment());
 
-                    FirebaseFirestore database= FirebaseFirestore.getInstance();
-                    HashMap<String, Object> user= new HashMap<>();
-                    user.put(Constants.KEY_NAME, userName);
-                    user.put(Constants.KEY_EMAIL, email);
-                    user.put(Constants.KEY_PASSWORD, password);
-                    user.put(Constants.KEY_PHONE_NUMBER, phoneNumber);
-                    user.put(Constants.KEY_LOCATION, location);
-                    user.put(Constants.KEY_IMAGE, encodedImage);
-                    database.collection(Constants.KEY_COLLECTION_USERS).document(task.getResult().getUser().getUid()).set(user).
-                            addOnSuccessListener(documentReference -> {
-                                loading(false);
-                                showToast("Signup Successfully");
-                    startActivity(new Intent(SignupActivity.this,LoginActivity.class));
-                    finish();
-                            })
-                            .addOnFailureListener(exception -> {
-                                loading(false);
-                                showToast(exception.getMessage());
+                        filePath.putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    task.getResult().getStorage().getDownloadUrl()
+                                            .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+                                                    String downloadUrl = uri.toString();
 
-                            });
+                                                    FirebaseFirestore database = FirebaseFirestore.getInstance();
+                                                    HashMap<String, Object> user = new HashMap<>();
+                                                    user.put(Constants.KEY_NAME, userName);
+                                                    user.put(Constants.KEY_EMAIL, email);
+                                                    user.put(Constants.KEY_PASSWORD, password);
+                                                    user.put(Constants.KEY_PHONE_NUMBER, phoneNumber);
+                                                    user.put(Constants.KEY_LOCATION, location);
+                                                    user.put(Constants.KEY_IMAGE, downloadUrl);
+                                                    database.collection(Constants.KEY_COLLECTION_USERS).document(task1.getResult().getUser().getUid()).set(user).
+                                                            addOnSuccessListener(documentReference -> {
+                                                                loading(false);
+                                                                showToast("Signup Successfully");
+                                                                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                                                                finish();
+                                                            })
+                                                            .addOnFailureListener(exception -> {
+                                                                loading(false);
+                                                                showToast(exception.getMessage());
+
+                                                            });
+                                                }
+                                            });
+                                } else {
+
+                                }
+                            }
+
+                        });
+                    }
+
 
                 } else {
                     loading(false);
-                    showToast(task.getException().getMessage());
+                    showToast(task1.getException().getMessage());
                 }
             }
         });
@@ -158,11 +190,11 @@ public class SignupActivity extends AppCompatActivity {
         imageText = findViewById(R.id.textAddImage);
     }
 
-    public void showToast(String Message){
+    public void showToast(String Message) {
         Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_SHORT).show();
     }
 
-    private  String encodeImage(Bitmap bitmap){
+   /* private  String encodeImage(Bitmap bitmap){
         int previewWidth = 150;
         int previewHeight = bitmap.getHeight() * previewWidth / bitmap.getWidth();
         Bitmap previewBitmap= Bitmap.createScaledBitmap(bitmap,previewWidth,previewHeight,false);
@@ -190,49 +222,58 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 }
             }
-    );
+    );*/
 
-    public Boolean isValidSignUpDetails(String userName, String email, String phoneNumber, String location, String password, String confirmPassword){
-        if(encodedImage == null){
+    public Boolean isValidSignUpDetails(String userName, String email, String phoneNumber, String location, String password, String confirmPassword) {
+        /*if (encodedImage == null) {
             showToast("Select Profile Image");
             return false;
-        }else if (userName.trim().isEmpty()){
+        } else*/ if (userName.trim().isEmpty()) {
             showToast("Enter name");
             return false;
-        }else if (email.trim().isEmpty()){
+        } else if (email.trim().isEmpty()) {
             showToast("Enter email");
             return false;
-        }else if ( !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             showToast("Enter Valid Email");
             return false;
-        }else if ( phoneNumber.length()>11 ){
+        } else if (phoneNumber.length() > 11) {
             showToast("Enter valid Phone Number");
             return false;
-        }else if (location.trim().isEmpty()){
+        } else if (location.trim().isEmpty()) {
             showToast("Enter Location");
             return false;
-        }else if (password.trim().isEmpty()){
+        } else if (password.trim().isEmpty()) {
             showToast("Enter Password");
             return false;
-        }else if (confirmPassword.trim().isEmpty()){
+        } else if (confirmPassword.trim().isEmpty()) {
             showToast("Confirm your password");
             return false;
-        }else if (! password.equals(confirmPassword)){
+        } else if (!password.equals(confirmPassword)) {
             showToast("Password Must be same");
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
 
-    private void loading(Boolean isLoading){
-        if (isLoading){
+    private void loading(Boolean isLoading) {
+        if (isLoading) {
             signupButton.setVisibility(View.INVISIBLE);
             progressBar.setVisibility(View.VISIBLE);
-        } else{
+        } else {
             progressBar.setVisibility(View.INVISIBLE);
             signupButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALLERY_CODE && resultCode == RESULT_OK) {
+            uri = data.getData();
+
+            imageProfile.setImageURI(uri);
         }
     }
 }

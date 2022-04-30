@@ -18,6 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -57,9 +58,10 @@ public class ProfileActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     String img = task.getResult().get("image").toString();
-                    byte[] bytes = Base64.decode(img, Base64.DEFAULT);
+                    /*byte[] bytes = Base64.decode(img, Base64.DEFAULT);
                     Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    profileImage.setImageBitmap(bitmap);
+                    profileImage.setImageBitmap(bitmap);*/
+                    Picasso.get().load(img).into(profileImage);
                 }
             }
         });

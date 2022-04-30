@@ -34,35 +34,35 @@
 
     <TextView
         android:id="@+id/instructionText"
-        app:layout_constraintTop_toBottomOf="@id/backArrow"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:text="Please fillup all the boxes below with correct information"
-        android:textSize="@dimen/_14ssp"
-        android:layout_marginTop="@dimen/_7sdp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Please fillup all the boxes below with correct information"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backArrow">
 
     </TextView>
 
     <TextView
         android:id="@+id/inputSoilText"
-        app:layout_constraintTop_toBottomOf="@id/instructionText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_7sdp"
-        android:text="Types of Soil"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Types of Soil"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instructionText">
 
     </TextView>
 
@@ -101,11 +101,11 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
+            android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
             android:hint="Enter Types of Soil"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
-            android:focusable="false"
             android:includeFontPadding="false"
             android:inputType="text"
             android:textColor="@color/Black"
@@ -128,18 +128,18 @@
 
     <TextView
         android:id="@+id/inputTemperatureText"
-        app:layout_constraintTop_toBottomOf="@id/inputSoilLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="Temperature"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Temperature"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputSoilLayout">
 
     </TextView>
 
@@ -186,6 +186,7 @@
             android:inputType="number"
             android:textColor="@color/Black"
             android:textColorHint="@color/colorTextHint"
+            android:textCursorDrawable="@drawable/text_cursor"
             android:textSize="@dimen/_13ssp">
 
         </EditText>
@@ -194,18 +195,18 @@
 
     <TextView
         android:id="@+id/inputPlaceText"
-        app:layout_constraintTop_toBottomOf="@id/inputTemperatureLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="Place"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Place"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTemperatureLayout">
 
     </TextView>
 
@@ -260,18 +261,18 @@
 
     <TextView
         android:id="@+id/inputWaterText"
-        app:layout_constraintTop_toBottomOf="@id/inputPlaceLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="Water Supply"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Water Supply"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlaceLayout">
 
     </TextView>
 
@@ -310,9 +311,9 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
+            android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
             android:hint="Amount of Water Supply"
-            android:focusable="false"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -337,18 +338,18 @@
 
     <TextView
         android:id="@+id/inputSunlightText"
-        app:layout_constraintTop_toBottomOf="@id/inputWaterLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="Sunlight"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Sunlight"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputWaterLayout">
 
     </TextView>
 
@@ -387,10 +388,10 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
+            android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
             android:hint="Amount of Sunlight"
             android:imeOptions="actionNext"
-            android:focusable="false"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
             android:inputType="text"
@@ -416,40 +417,40 @@
         android:id="@+id/optionalText"
         android:layout_width="@dimen/_55sdp"
         android:layout_height="wrap_content"
-        android:text="Optional"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:textSize="@dimen/_12ssp"
         android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:fontFamily="@font/ubuntu_regular"
+        android:text="Optional"
+        android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputSunlightLayout" />
 
     <View
-        app:layout_constraintStart_toEndOf="@id/optionalText"
-        app:layout_constraintTop_toTopOf="@id/optionalText"
-        app:layout_constraintBottom_toBottomOf="@id/optionalText"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="@dimen/_230sdp"
         android:layout_height="@dimen/_2sdp"
         android:layout_gravity="center"
-        android:background="@color/colorAsh">
+        android:background="@color/colorAsh"
+        app:layout_constraintBottom_toBottomOf="@id/optionalText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/optionalText"
+        app:layout_constraintTop_toTopOf="@id/optionalText">
 
     </View>
 
     <TextView
         android:id="@+id/inputPlantText"
-        app:layout_constraintTop_toBottomOf="@id/optionalText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="Types of Plant"
-        android:textSize="@dimen/_15ssp"
-        android:fontFamily="@font/ubuntu_medium"
-        android:textColor="@color/Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Types of Plant"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/optionalText">
 
     </TextView>
 
@@ -489,11 +490,11 @@
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
+            android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
             android:hint="Enter Types of Plant"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
-            android:focusable="false"
             android:includeFontPadding="false"
             android:inputType="text"
             android:textColor="@color/Black"
@@ -516,19 +517,19 @@
 
     <FrameLayout
         android:id="@+id/submitButtonLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputPlantLayout"
-        android:animateLayoutChanges="true"
-        android:layout_marginTop="@dimen/_20sdp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:animateLayoutChanges="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlantLayout">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/chooseTreeSubmitButton"
-            android:layout_gravity="center"
             android:layout_width="@dimen/_282sdp"
             android:layout_height="@dimen/_39sdp"
+            android:layout_gravity="center"
             android:background="@drawable/button_bg_2"
             android:fontFamily="@font/ubuntu_bold"
             android:text="Submit"
@@ -539,16 +540,13 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_gravity="center"
-            android:progressTint="@color/colorPrimary"
-            android:visibility="invisible"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
-            ></ProgressBar>
+            android:layout_gravity="center"
+            android:progressTint="@color/colorPrimary"
+            android:visibility="invisible"></ProgressBar>
 
     </FrameLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         findSection();
 
 
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +60,13 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(LoginActivity.this,ChooseLoginOrSignupActivity.class));
+        finish();
     }
 
     private void loginUser(String email, String password) {

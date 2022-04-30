@@ -83,6 +83,7 @@
                 android:inputType="textEmailAddress"
                 android:textColor="@color/Black"
                 android:textColorHint="@color/colorTextHint"
+                android:textCursorDrawable="@drawable/text_cursor"
                 android:textSize="@dimen/_13ssp">
 
             </EditText>
@@ -132,6 +133,7 @@
                 android:inputType="textPassword"
                 android:textColor="@color/Black"
                 android:textColorHint="@color/colorTextHint"
+                android:textCursorDrawable="@drawable/text_cursor"
                 android:textSize="@dimen/_13ssp">
 
             </EditText>
@@ -140,19 +142,19 @@
 
         <FrameLayout
             android:id="@+id/submitButtonLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordLayout"
-            android:animateLayoutChanges="true"
-            android:layout_marginTop="@dimen/_42sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_42sdp"
+            android:animateLayoutChanges="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/loginButton"
-                android:layout_gravity="center"
                 android:layout_width="@dimen/_265sdp"
                 android:layout_height="@dimen/_42sdp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_bg_2"
                 android:fontFamily="@font/ubuntu_bold"
                 android:text="login"
@@ -162,12 +164,12 @@
 
             <ProgressBar
                 android:id="@+id/progressBar"
-                android:layout_gravity="center"
-                android:progressTint="@color/colorPrimary"
-                android:visibility="invisible"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
-                ></ProgressBar>
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary"
+                android:progressTint="@color/colorPrimary"
+                android:visibility="invisible" />
 
         </FrameLayout>
 

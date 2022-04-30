@@ -1,24 +1,44 @@
 package com.example.plant.activity.fragment;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.text.style.IconMarginSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.plant.R;
 import com.example.plant.activity.ChooseTreeActivity;
 import com.example.plant.activity.ComplainActivity;
+import com.example.plant.activity.MainActivity;
 import com.example.plant.activity.SuggestedTreeActivity;
 import com.example.plant.activity.adapter.SliderAdapter;
 import com.example.plant.activity.model.SlideInfo;
+import com.example.plant.activity.model.WeatherData;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,9 +47,15 @@ import com.google.firebase.database.ValueEventListener;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class HomeFragment extends Fragment {
@@ -40,6 +66,11 @@ public class HomeFragment extends Fragment {
     private LinearLayout layoutChooseTree;
     private LinearLayout layoutSuggestTree;
     private LinearLayout layoutComplainDeforestation;
+    private TextView temperature;
+    private TextView weatherState;
+    private TextView nameOfCity;
+
+    private ImageView weatherImage;
 
     private DatabaseReference SlideRef;
 
@@ -48,12 +79,17 @@ public class HomeFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=  inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        temperature = view.findViewById(R.id.temperature);
+        weatherState = view.findViewById(R.id.weatherState);
+        nameOfCity = view.findViewById(R.id.nameOfCity);
+
+        weatherImage = view.findViewById(R.id.weatherImage);
 
 
         layoutChooseTree = view.findViewById(R.id.layout_choose_tree);
@@ -100,7 +136,7 @@ public class HomeFragment extends Fragment {
         SlideRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
 
                     for (DataSnapshot postSnapshot : snapshot.getChildren()) {
 
@@ -129,14 +165,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-
         return view;
-
-
     }
 
-    public void showToast(String Message){
+    public void showToast(String Message) {
         Toast.makeText(getContext(), Message, Toast.LENGTH_SHORT).show();
     }
 

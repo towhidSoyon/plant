@@ -1,7 +1,9 @@
 package com.example.plant.activity.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,16 +15,31 @@ import android.widget.Toast;
 
 import com.example.plant.R;
 import com.example.plant.activity.adapter.ContactAdapter;
+import com.example.plant.activity.adapter.SliderAdapter;
 import com.example.plant.activity.model.ContactInfo;
+import com.example.plant.activity.model.SlideInfo;
 import com.example.plant.activity.utilities.Constants;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ContactFragment extends Fragment {
+
+    SliderView sliderView;
+    SliderAdapter adapter;
+
+    private DatabaseReference SlideRef;
 
     RecyclerView contactRecyclerView;
     
@@ -42,6 +59,54 @@ public class ContactFragment extends Fragment {
         contactRecyclerView = view.findViewById(R.id.contactRecyclerView);
         
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        sliderView = view.findViewById(R.id.imageSlider);
+        adapter = new SliderAdapter(getActivity());
+        sliderView.setSliderAdapter(adapter);
+
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using IndicatorAnimationType. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        sliderView.setIndicatorSelectedColor(R.color.colorPrimary);
+        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setScrollTimeInSec(6); //set scroll delay in seconds :
+        sliderView.startAutoCycle();
+
+        final List<SlideInfo> sliderItemList = new ArrayList<>();
+
+        SlideRef = FirebaseDatabase.getInstance().getReference().child("ContactSlideShow");
+
+        SlideRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+
+                    for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+
+                        SlideInfo posts = postSnapshot.getValue(SlideInfo.class);
+
+                        String key = postSnapshot.getKey();
+                        String description = snapshot.child(key).child("description").getValue().toString();
+                        String url = snapshot.child(key).child("imageUrl").getValue().toString();
+
+                        posts.setImageKey(key);
+                        posts.setImageUrl(url);
+                        posts.setDescription(description);
+
+                        sliderItemList.add(posts);
+
+                    }
+                    adapter.renewItems((ArrayList<SlideInfo>) sliderItemList);
+                    adapter.notifyDataSetChanged();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         
         getContacts();
         

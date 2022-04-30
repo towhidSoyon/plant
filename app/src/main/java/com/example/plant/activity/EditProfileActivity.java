@@ -1,18 +1,13 @@
 package com.example.plant.activity;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,15 +16,17 @@ import android.widget.Toast;
 import com.example.plant.R;
 import com.example.plant.activity.utilities.Constants;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -47,8 +44,12 @@ public class EditProfileActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseFirestore firebaseFirestore;
+    StorageReference mRef;
 
-    private String encodedImage;
+    private Uri uri = null;
+
+    private static final int GALLERY_CODE = 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class EditProfileActivity extends AppCompatActivity {
         findSection();
 
         firebaseFirestore = FirebaseFirestore.getInstance();
+        mRef = FirebaseStorage.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
         backArrow.setOnClickListener(new View.OnClickListener() {
@@ -74,9 +76,10 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     String img = task.getResult().get("image").toString();
-                    byte[] bytes = Base64.decode(img, Base64.DEFAULT);
+                    /*byte[] bytes = Base64.decode(img, Base64.DEFAULT);
                     Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    editProfileImage.setImageBitmap(bitmap);
+                    editProfileImage.setImageBitmap(bitmap);*/
+                    Picasso.get().load(img).into(editProfileImage);
                 }
             }
         });
@@ -125,9 +128,9 @@ public class EditProfileActivity extends AppCompatActivity {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                pickImage.launch(intent);
+                Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, GALLERY_CODE);
             }
         });
 
@@ -153,22 +156,50 @@ public class EditProfileActivity extends AppCompatActivity {
 
         String currentUser = mAuth.getCurrentUser().getUid();
 
-        FirebaseFirestore database= FirebaseFirestore.getInstance();
-        HashMap<String, Object> user= new HashMap<>();
-        user.put(Constants.KEY_NAME, userName);
-        user.put(Constants.KEY_EMAIL, email);
-        user.put(Constants.KEY_PHONE_NUMBER, phoneNumber);
-        user.put(Constants.KEY_LOCATION, location);
-        user.put(Constants.KEY_IMAGE, encodedImage);
-        database.collection(Constants.KEY_COLLECTION_USERS).document(currentUser).set(user).
-                addOnSuccessListener(documentReference -> {
-                    showToast("Updated Successfully");
-                    startActivity(new Intent(EditProfileActivity.this,MainActivity.class));
-                })
-                .addOnFailureListener(exception -> {
-                    showToast(exception.getMessage());
+        if (uri != null) {
+            StorageReference filePath = mRef.child("User Images").child(uri.getLastPathSegment());
 
-                });
+            filePath.putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        task.getResult().getStorage().getDownloadUrl()
+                                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String downloadUrl = uri.toString();
+
+                                        FirebaseFirestore database= FirebaseFirestore.getInstance();
+                                        HashMap<String, Object> user= new HashMap<>();
+                                        user.put(Constants.KEY_NAME, userName);
+                                        user.put(Constants.KEY_EMAIL, email);
+                                        user.put(Constants.KEY_PHONE_NUMBER, phoneNumber);
+                                        user.put(Constants.KEY_LOCATION, location);
+                                        user.put(Constants.KEY_IMAGE, downloadUrl);
+                                        database.collection(Constants.KEY_COLLECTION_USERS).document(currentUser).set(user).
+                                                addOnSuccessListener(documentReference -> {
+                                                    showToast("Updated Successfully");
+                                                    startActivity(new Intent(EditProfileActivity.this,MainActivity.class));
+                                                })
+                                                .addOnFailureListener(exception -> {
+                                                    showToast(exception.getMessage());
+
+                                                });
+
+
+                                    }
+                                });
+                    } else {
+
+                    }
+                }
+
+            });
+        }
+
+
+
+
     }
 
     private void findSection() {
@@ -183,7 +214,7 @@ public class EditProfileActivity extends AppCompatActivity {
         doneButton = findViewById(R.id.updateButton);
     }
 
-    private  String encodeImage(Bitmap bitmap){
+    /*private  String encodeImage(Bitmap bitmap){
         int previewWidth = 150;
         int previewHeight = bitmap.getHeight() * previewWidth / bitmap.getWidth();
         Bitmap previewBitmap= Bitmap.createScaledBitmap(bitmap,previewWidth,previewHeight,false);
@@ -210,13 +241,13 @@ public class EditProfileActivity extends AppCompatActivity {
                     }
                 }
             }
-    );
+    );*/
 
     public Boolean isValidSignUpDetails(String userName, String email, String phoneNumber, String location){
-        if(encodedImage == null){
+        /*if(encodedImage == null){
             showToast("Select Profile Image");
             return false;
-        }else if (userName.trim().isEmpty()){
+        }else*/ if (userName.trim().isEmpty()){
             showToast("Enter name");
             return false;
         }else if (email.trim().isEmpty()){
@@ -238,5 +269,15 @@ public class EditProfileActivity extends AppCompatActivity {
 
     public void showToast(String Message){
         Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALLERY_CODE && resultCode == RESULT_OK) {
+            uri = data.getData();
+
+            editProfileImage.setImageURI(uri);
+        }
     }
 }

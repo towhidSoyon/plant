@@ -191,35 +191,27 @@ public class AddBlogActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_SHORT).show();
     }
 
-    private  String encodeImage(Bitmap bitmap){
-        int previewWidth = 150;
-        int previewHeight = bitmap.getHeight() * previewWidth / bitmap.getWidth();
-        Bitmap previewBitmap= Bitmap.createScaledBitmap(bitmap,previewWidth,previewHeight,false);
-        ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
-        previewBitmap.compress(Bitmap.CompressFormat.JPEG,50,byteArrayOutputStream);
-        byte[] bytes= byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(bytes, Base64.DEFAULT);
-    }
 
-    private final ActivityResultLauncher<Intent> pickImage = registerForActivityResult(
+
+    /*private final ActivityResultLauncher<Intent> pickImage = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == RESULT_OK){
                     if (result.getData() != null){
                         uri=result.getData().getData();
-                        /*try{
+                        *//*try{
                             InputStream inputStream=getContentResolver().openInputStream(imageUri);
                             Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
                             blogImage.setImageBitmap(bitmap);
                             encodedImage= encodeImage(bitmap);
                         }catch (FileNotFoundException e){
                             e.printStackTrace();
-                        }*/
+                        }*//*
                         blogImage.setImageURI(uri);
                     }
                 }
             }
-    );
+    );*/
 
     public Boolean isValidDetails(String title, String desc){
         /*if(encodedImage == null){

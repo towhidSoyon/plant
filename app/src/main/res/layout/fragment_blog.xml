@@ -27,7 +27,7 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_16sdp"
-        android:background="@drawable/imageview_bg"
+        android:background="@drawable/imageview_bg_4"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_7sdp"
         android:src="@drawable/edit"

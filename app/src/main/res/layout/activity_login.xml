@@ -6,7 +6,7 @@
     android:clipToPadding="false"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".activity.LoginActivity">
+    tools:context=".codebase.activity.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -76,7 +76,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -126,7 +126,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -157,7 +157,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/button_bg_2"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="login"
+                android:text="@string/login"
                 android:textSize="@dimen/_21sdp">
 
             </androidx.appcompat.widget.AppCompatButton>
@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_28sdp"
             android:fontFamily="@font/ubuntu_regular"
-            android:text="Forgot Password?"
+            android:text="@string/forgot_password"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

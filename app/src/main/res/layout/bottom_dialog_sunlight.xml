@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:text="Select sunlight level"
+            android:text="@string/select_sunlight_level"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_regular"
             android:textSize="@dimen/_12ssp"
@@ -40,7 +40,7 @@
 
 
         <TextView
-            android:text="LOW"
+            android:text="@string/low"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -70,7 +70,7 @@
 
 
         <TextView
-            android:text="AVERAGE"
+            android:text="@string/average"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -102,7 +102,7 @@
 
 
         <TextView
-            android:text="GOOD"
+            android:text="@string/good"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"

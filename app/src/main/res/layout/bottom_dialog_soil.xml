@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:text="Types of Soil"
+            android:text="@string/types_of_soil"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_regular"
             android:textSize="@dimen/_12ssp"
@@ -40,7 +40,7 @@
 
 
         <TextView
-            android:text="BELE SOIL"
+            android:text="@string/bele_soil"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -70,7 +70,7 @@
 
 
         <TextView
-            android:text="DO-ASH SOIL"
+            android:text="@string/do_ash_soil"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -100,7 +100,7 @@
 
 
         <TextView
-            android:text="ETEL SOIL"
+            android:text="@string/etel_soil"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -130,7 +130,7 @@
 
 
         <TextView
-            android:text="BELE-DO-ASH SOIL"
+            android:text="@string/bele_do_ash_soil"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"

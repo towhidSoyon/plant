@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:text="Types of Plant"
+            android:text="@string/types_of_plant"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_regular"
             android:textSize="@dimen/_12ssp"
@@ -40,7 +40,7 @@
 
 
         <TextView
-            android:text="FRUITS"
+            android:text="@string/fruits"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -70,7 +70,7 @@
 
 
         <TextView
-            android:text="FLOWERS"
+            android:text="@string/flowers"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -100,7 +100,7 @@
 
 
         <TextView
-            android:text="MEDICINE"
+            android:text="@string/medicine"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -130,7 +130,7 @@
 
 
         <TextView
-            android:text="ECONOMICAL"
+            android:text="@string/economical"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"
@@ -160,7 +160,7 @@
 
 
         <TextView
-            android:text="All"
+            android:text="@string/all"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_medium"
             android:textSize="@dimen/_14ssp"

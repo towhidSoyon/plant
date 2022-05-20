@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".activity.AddBlogActivity">
+    tools:context=".codebase.activity.AddBlogActivity">
 
     <ImageView
         android:id="@+id/logoImage"
@@ -15,7 +15,8 @@
         android:background="@drawable/logo_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription">
 
     </ImageView>
 
@@ -23,7 +24,7 @@
         android:id="@+id/backArrow"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_25sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/back"
         android:backgroundTint="@color/Black"
@@ -39,7 +40,7 @@
         android:layout_marginStart="@dimen/_11sdp"
         android:layout_marginTop="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Title"
+        android:text="@string/title"
         android:textColor="@color/Black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +62,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:padding="@dimen/_2sdp"
             android:src="@drawable/edit">
@@ -72,7 +73,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -84,7 +85,7 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Enter Title"
+            android:hint="@string/enter_title"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -105,7 +106,7 @@
         android:layout_marginTop="@dimen/_6sdp"
         android:layout_marginBottom="@dimen/_22sdp"
         android:fontFamily="@font/ubuntu_regular"
-        android:text="2 March, 2022; 7.30 pm"
+        android:text="@string/_2_march_2022_7_30_pm"
         android:textColor="@color/colorTextHint"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintStart_toStartOf="@id/titleLayout"
@@ -120,7 +121,7 @@
         android:layout_marginStart="@dimen/_11sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Description"
+        android:text="@string/description"
         android:textColor="@color/Black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,7 +178,8 @@
             android:layout_height="@dimen/_135sdp"
             android:background="@drawable/edit_text_bg"
             android:scaleType="centerCrop"
-            app:riv_oval="true">
+            app:riv_oval="true"
+            tools:ignore="ContentDescription">
 
         </ImageView>
 
@@ -187,7 +189,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/ubuntu_medium"
-            android:text="Click Here To Add Image"
+            android:text="@string/click_here_to_add_image"
             android:textColor="@color/colorTextHint"
             android:textSize="@dimen/_18ssp">
 
@@ -201,7 +203,7 @@
         android:layout_marginTop="@dimen/_17sdp"
         android:background="@drawable/button_bg_2"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Post"
+        android:text="@string/post"
         android:textSize="@dimen/_21sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

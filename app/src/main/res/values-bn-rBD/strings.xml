@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Plant</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="your_identity_will_be_hidden">আপনার পরিচয় গোপন থাকবে!</string>
+    <string name="details">
+        Basically my full name is Towhidul Islam Sayon as my certificate. But for the sake of simplicity I use Towhid Soyon
+        on all of my social sites. I am an Android Developer. For the last two years I am working on this sector. I have some proficiency in JAVA
+         and that is why I choose this as my career.
+
+        Right now I am fulfilling my B.Sc CSE Degree from Daffodil International University. And completed my HSC from Govt. Science College.
+        Basically The main motivation is to build this app is actually to provide people the right solution for tree plantation. Planting trees
+        without knowing its benefits will result in nothing. As a result to find a solution of this problem I made this app.
+
+        Beside these, to make this app my Final year Defence supervisor Respected JA Polin Maam (Lecturer at DIU) played a vital role. She always
+        guided me towards the best way to achieve success. I will be ever grateful to her.
+
+        This project is also a part of my final Year Defence, So yeah that is all about me.
+
+    </string>
+    <string name="enter_title">টাইটেল লিখুন</string>
+    <string name="description">বিস্তারিত</string>
+    <string name="click_here_to_add_image">ছবি এড করুন</string>
+    <string name="post">পোষ্ট</string>
+    <string name="title">টাইটেল</string>
+    <string name="_2_march_2022_7_30_pm">2 March, 2022; 7.30 pm</string>
+    <string name="author">লেখক</string>
+    <string name="name_here">এখানে নাম</string>
+    <string name="published_on">প্রকাশিত:</string>
+    <string name="dummy_text">This is a dummy text for testing whether this value is applicable for my design what i am expecting or not.</string>
+    <string name="login">লগিন</string>
+    <string name="signup">সাইনআপ</string>
+    <string name="all_rights_reserved_by_plant">প্লান্ট কর্তৃক সকল সত্ত্ব সংরক্ষিত</string>
+    <string name="types_of_soil">মাটির ধরন</string>
+    <string name="please_fillup_all_the_boxes_below_with_correct_information">অনুগ্রহ করে সবগুলো বাক্সে সথিক তথ্য প্রদান করুন</string>
+    <string name="enter_types_of_soil">মাটির ধরন লিখুন</string>
+    <string name="temperature">তাপমাত্রা</string>
+    <string name="enter_temperature">তাপমাত্রা লিখুন</string>
+    <string name="place">স্থান</string>
+    <string name="ex_upazilla_p_s_district">উদাহরণ: উপজেলা, জেলা </string>
+    <string name="water_supply">পানির প্রবাহ</string>
+    <string name="amount_of_water_supply">পানি প্রবাহের পরিমাণ</string>
+    <string name="sunlight">সূর্যের আলো</string>
+    <string name="amount_of_sunlight">সূর্যের আলোর পরিমাণ</string>
+    <string name="optional">অপশনাল</string>
+    <string name="types_of_plant">উদ্ভিদের ধরণ</string>
+    <string name="enter_types_of_plant">উদ্ভিদের ধরণ লিখুন</string>
+    <string name="submit">সাবমিট</string>
+    <string name="fruit_tree">ফলজ উদ্ভিদ</string>
+    <string name="result_dummy_text">Results hnkfdjvnbksdbvkbdskbvkcfbxkvbkxcnbvcxkvbkcxbnvknbcxknbvkcxnbkvn</string>
+    <string name="flower_tree">ফুলজ উদ্ভিদ</string>
+    <string name="result_dummy_text_flower">Results hnkfdjvnbksdbvkbdskbvkcfbxkvbkxcnbvcxkvbkcxbnvknbcxknbvkcxnbkvn</string>
+    <string name="medicine_tree">ঔষধি উদ্ভিদ</string>
+    <string name="result_dummy_text_medicine">Results hnkfdjvnbksdbvkbdskbvkcfbxkvbkxcnbvcxkvbkcxbnvknbcxknbvkcxnbkvn</string>
+    <string name="economical_tree">আর্থিক উদ্ভিদ</string>
+    <string name="please_choose">পছন্দ করুন</string>
+    <string name="stay_anonymous">গোপনীয়তা বজায় রাখুন</string>
+    <string name="use_identity">পপরিচিতি ব্যাবহার করুন</string>
+    <string name="location">স্থান</string>
+    <string name="user_name">ইউসার নাম</string>
+    <string name="phone_here">ফোন</string>
+    <string name="email_here">ইমেইল</string>
+    <string name="full_name">পুরো নাম</string>
+    <string name="towhid_soyon">তৌহিদ সয়ন</string>
+    <string name="email">ইমেইল</string>
+    <string name="towhid12728_gmail_com">towhid12728@gmail.com</string>
+    <string name="phone_no">ফোন.</string>
+    <string name="_01766755346">01766755346</string>
+    <string name="address">ঠিকানা</string>
+    <string name="dhaka_bangladesh">Dhaka, Bangladesh</string>
+    <string name="done">ঠিক</string>
+    <string name="password">পাসওয়ার্ড</string>
+    <string name="forgot_password">পাসওয়ার্ড ভুলে গেছেন?</string>
+    <string name="_01521733203">01521733203</string>
+    <string name="add_image">ছবি এড করুন</string>
+    <string name="phone_number">ফোন</string>
+    <string name="confirm_password">কনফার্ম পাসওয়ার্ড</string>
+    <string name="already_have_an_account_login">অ্যাকাউন্ট আছে? লগিন</string>
+    <string name="medicine_plant">ঔষধি উদ্ভিদ</string>
+    <string name="suitable_plants_for_ac_room">শীতাতপ নিয়ন্ত্রিত রুমের উপযোগী উদ্ভিদ</string>
+    <string name="fruit_plant">ফলজ উদ্ভিদ</string>
+    <string name="flower_plant">ফুলজ উদ্ভিদ</string>
+    <string name="button2plant">button2Plant</string>
+    <string name="button3plant">button3Plant</string>
+    <string name="button4">button4</string>
+    <string name="button5">button5</string>
+    <string name="suggested_tree_details">suggested tree details</string>
+    <string name="blog_title">ব্লগ টাইটেল</string>
+    <string name="author_developers">লেখক: ইউসার</string>
+    <string name="blog_description">বিস্তারিত</string>
+    <string name="fruits">ফল</string>
+    <string name="medicine">ঔষধি</string>
+    <string name="flowers">ফুল</string>
+    <string name="economical">আর্থিক</string>
+    <string name="all">সকল</string>
+    <string name="bele_soil">বেলে মাটি</string>
+    <string name="do_ash_soil">দো আঁশ মাটি</string>
+    <string name="etel_soil">এঁটেল মাটি</string>
+    <string name="bele_do_ash_soil">বেলে-দো আঁশ মাটি</string>
+    <string name="select_sunlight_level">সূর্যের আলোর তীব্রতা বাছাই করুন</string>
+    <string name="low">কম</string>
+    <string name="average">মোটামুটি</string>
+    <string name="good">ভালো</string>
+    <string name="select_water_supply_level">পানি প্রবাহের পরিমাণ বাছাই করুন</string>
+    <string name="fabliha_ji">Fabliha Ji</string>
+    <string name="n_a">N/A</string>
+    <string name="view_profile">প্রফাইল দেখুন</string>
+    <string name="edit_profile">ইডিট প্রফাইল</string>
+    <string name="android_developer">এন্ড্রয়েড ডেভেলপার</string>
+    <string name="details_about">বিস্তারিত</string>
+    <string name="details_about_text">Dummy Text</string>
+    <string name="contact_info">যোগাযোগ</string>
+    <string name="for_more_query">আরো জানতে</string>
+    <string name="search">খুজুন</string>
+    <string name="_0_celcius">0 celcius</string>
+    <string name="haze">Haze</string>
+    <string name="fetching">fetching..</string>
+    <string name="choose_tree">উদ্ভিদ বাছাই করুন</string>
+    <string name="suggest_tree">উদ্ভিদ সাজেশন</string>
+    <string name="complain_deforestation">বন উজারকরন এর অভিযোগ</string>
+    <string name="headerName">Rafidul Islam</string>
+    <string name="headerAddress">ঠিকানা</string>
+    <string name="suggested_tree">Suggested tree</string>
+    <string name="brinjalplant">বেগুন এর উপকারিতা</string>
+</resources>

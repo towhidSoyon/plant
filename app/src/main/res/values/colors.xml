@@ -5,6 +5,8 @@
     <color name="colorPrimaryDark">#4b830d</color>
     <color name="colorBackground">#E5E5E5</color>
     <color name="colorBlue">#4298B3</color>
+    <color name="colorPurple">#9A37AC</color>
+    <color name="colorLightPurple">#EDB3F6</color>
     <color name="colorWeather">#E7EEF4</color>
     <color name="colorLightBlue">#DFF0FF</color>
     <color name="white">#FFFFFFFF</color>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".activity.BlogDetailsActivity">
+    tools:context=".codebase.activity.BlogDetailsActivity">
 
     <ImageView
         android:id="@+id/logoImage"
@@ -23,7 +23,7 @@
         android:id="@+id/backArrow"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_25sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/back"
         android:backgroundTint="@color/Black"
@@ -39,7 +39,7 @@
         android:layout_marginStart="@dimen/_11sdp"
         android:fontFamily="@font/ubuntu_bold"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Title"
+        android:text="@string/title"
         android:textColor="@color/Black"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
 
     <ImageView
         android:id="@+id/suggestedTreeDetailsImage"
-        android:layout_width="@dimen/_290sdp"
+        android:layout_width="@dimen/_297sdp"
         android:layout_height="@dimen/_180sdp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/_8sdp"
@@ -60,14 +60,14 @@
 
     </ImageView>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/blogDetailsAuthor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_11sdp"
         android:fontFamily="@font/ubuntu_regular"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Author"
+        android:text="@string/author"
         android:textColor="@color/colorTextHint"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
         android:layout_marginStart="@dimen/_11sdp"
         android:fontFamily="@font/ubuntu_regular"
         android:layout_marginTop="@dimen/_2sdp"
-        android:text="Name here"
+        android:text="@string/name_here"
         android:textColor="@color/colorTextHint"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +97,7 @@
         android:layout_marginStart="@dimen/_11sdp"
         android:fontFamily="@font/ubuntu_regular"
         android:layout_marginTop="@dimen/_2sdp"
-        android:text="Publisehd on: "
+        android:text="@string/published_on"
         android:gravity="center"
         android:textColor="@color/colorTextHint"
         android:textSize="@dimen/_12ssp"
@@ -117,24 +117,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/blogDetailsDate">
 
-    </View>
+    </View>-->
 
     <LinearLayout
         android:id="@+id/layoutSuggestedTreeDesc"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_350sdp"
-        android:layout_marginTop="28dp"
+        android:layout_height="@dimen/_375sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider">
+        app:layout_constraintTop_toBottomOf="@id/suggestedTreeDetailsImage">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/suggestedTreeDetailsDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,11 +142,42 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:fontFamily="@font/ubuntu_regular"
-                android:text="This is a dummy text for testing whether this value is applicable for my desgin what i am expecting or not."
+                android:text="@string/dummy_text"
                 android:textColor="@color/Black"
                 android:textSize="@dimen/_16ssp">
 
-            </TextView>
+            </TextView>-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/blogDetailsDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="blog details"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
         </ScrollView>

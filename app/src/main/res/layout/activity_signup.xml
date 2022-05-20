@@ -6,7 +6,7 @@
     android:clipToPadding="false"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".activity.SignupActivity">
+    tools:context=".codebase.activity.SignupActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Add Image"
+                android:text="@string/add_image"
                 android:textColor="@color/colorTextHint"
                 android:textSize="@dimen/_10ssp">
 
@@ -84,7 +84,7 @@
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:alpha="0.6"
                 android:src="@drawable/user">
 
@@ -94,7 +94,7 @@
                 android:layout_width="@dimen/_2sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/colorAsh">
 
             </View>
@@ -106,7 +106,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Full Name"
+                android:hint="@string/full_name"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -134,7 +134,7 @@
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:alpha="0.6"
                 android:src="@drawable/email">
 
@@ -144,7 +144,7 @@
                 android:layout_width="@dimen/_2sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/colorAsh">
 
             </View>
@@ -156,7 +156,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -184,7 +184,8 @@
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
+
+                android:layout_marginStart="@dimen/_10sdp"
                 android:alpha="0.6"
                 android:src="@drawable/call_black">
 
@@ -194,7 +195,7 @@
                 android:layout_width="@dimen/_2sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/colorAsh">
 
             </View>
@@ -206,7 +207,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Phone Number"
+                android:hint="@string/phone_number"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -234,7 +235,8 @@
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
+
+                android:layout_marginStart="@dimen/_10sdp"
                 android:alpha="0.6"
                 android:src="@drawable/location_logo">
 
@@ -244,7 +246,7 @@
                 android:layout_width="@dimen/_2sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/colorAsh">
 
             </View>
@@ -256,7 +258,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Location"
+                android:hint="@string/location"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -284,7 +286,7 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:alpha="0.6"
                 android:src="@drawable/lock">
 
@@ -294,7 +296,7 @@
                 android:layout_width="@dimen/_2sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/colorAsh">
 
             </View>
@@ -306,7 +308,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:imeOptions="actionNext"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -334,7 +336,7 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:alpha="0.6"
                 android:src="@drawable/lock">
 
@@ -344,7 +346,7 @@
                 android:layout_width="@dimen/_2sdp"
                 android:layout_height="@dimen/_22sdp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/colorAsh">
 
             </View>
@@ -356,7 +358,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:background="@null"
                 android:fontFamily="@font/ubuntu_regular"
-                android:hint="Confirm password"
+                android:hint="@string/confirm_password"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -387,7 +389,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/button_bg_2"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="Signup"
+                android:text="@string/signup"
                 android:textSize="@dimen/_21sdp">
 
             </androidx.appcompat.widget.AppCompatButton>
@@ -410,7 +412,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
             android:fontFamily="@font/ubuntu_bold"
-            android:text="Already have an account? Login"
+            android:text="@string/already_have_an_account_login"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

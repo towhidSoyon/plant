@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_marginStart="@dimen/_16sdp"
-    android:layout_marginEnd="@dimen/_16sdp"
     android:layout_marginTop="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_16sdp"
     android:layout_marginBottom="@dimen/_7sdp"
-    android:background="@drawable/blog_item_bg">
-
+    android:background="@drawable/blog_item_bg"
+    android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
@@ -26,13 +24,10 @@
             android:id="@+id/listBlogImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/placeholder_image"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/placeholder_image" />
 
     </androidx.cardview.widget.CardView>
-
-
-
 
 
     <View
@@ -49,44 +44,45 @@
 
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/imageCoverView"
-        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/listBlogTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_7sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Blog Title"
+        android:padding="@dimen/_2sdp"
+        android:text="@string/blog_title"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/_20ssp" />
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageCoverView" />
+
+    <!--  <TextView
+          app:layout_constraintTop_toBottomOf="@id/listBlogTitle"
+          app:layout_constraintStart_toStartOf="parent"
+          android:id="@+id/listAuthor"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/_10sdp"
+          android:layout_marginStart="@dimen/_7sdp"
+          android:fontFamily="@font/ubuntu_regular"
+          android:text="@string/author_developers"
+          android:textColor="@color/colorAsh"
+          android:textSize="@dimen/_14ssp"/>-->
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/listBlogTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/listAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_7sdp"
-        android:fontFamily="@font/ubuntu_regular"
-        android:text="Author: Developers"
-        android:textColor="@color/colorAsh"
-        android:textSize="@dimen/_14ssp"/>
-
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/listAuthor"
-        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/listBlogDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="24dp"
-        android:layout_marginStart="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_regular"
-        android:text="Quiz Description"
+        android:text="@string/blog_description"
         android:textColor="@color/Black"
         android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listBlogTitle"
         app:lineHeight="28dp" />
 
     <View

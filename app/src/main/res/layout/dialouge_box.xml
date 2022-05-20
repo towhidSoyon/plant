@@ -32,7 +32,7 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:fontFamily="@font/ubuntu_regular"
             android:includeFontPadding="false"
-            android:text="View Profile"
+            android:text="@string/view_profile"
             android:textColor="@color/Black"
             android:textSize="@dimen/_18ssp" />
 
@@ -60,7 +60,7 @@
             android:fontFamily="@font/ubuntu_regular"
             android:includeFontPadding="false"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="Edit Profile"
+            android:text="@string/edit_profile"
             android:textColor="@color/Black"
             android:textSize="@dimen/_18ssp"/>
 

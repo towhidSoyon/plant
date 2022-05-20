@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".codebase.activity.ReminderActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="-5dp"
+        android:background="@drawable/logo_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="@string/please_fillup_all_the_boxes_below_with_correct_information"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backArrow"/>
+
+    <TextView
+        android:id="@+id/inputPlantText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="@string/types_of_plant"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instructionText">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/reminderPlantLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlantText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:alpha="1"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/tree_icon">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/reminderPlantEditText"
+            android:layout_width="@dimen/_198sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:focusable="false"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="@string/enter_types_of_plant"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/dropdown">
+
+        </ImageView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/inputPlaceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="@string/place"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reminderPlantLayout">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputPlaceLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlaceText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:alpha="1"
+            android:src="@drawable/location_logo">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/reminderPlaceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="@string/ex_upazilla_p_s_district"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/inputDateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Date of Planting"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPlaceLayout">
+
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/inputDateLayout"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@drawable/edit_text_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputDateText">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:padding="@dimen/_2sdp"
+            android:alpha="1"
+            android:src="@drawable/calendar">
+
+        </ImageView>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/colorAsh">
+
+        </View>
+
+        <EditText
+            android:id="@+id/dateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@null"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="dd/mm/yyyy"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="date"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/_13ssp">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/submitButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:animateLayoutChanges="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputDateLayout">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reminderSubmitButton"
+            android:layout_width="@dimen/_282sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_bg_2"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_21sdp">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:progressTint="@color/colorPrimary"
+            android:visibility="invisible"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

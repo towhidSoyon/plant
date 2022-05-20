@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".activity.ChooseTreeActivity">
+    tools:context=".codebase.activity.ChooseTreeActivity">
 
     <ImageView
         android:id="@+id/logoImage"
@@ -23,7 +23,7 @@
         android:id="@+id/backArrow"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_25sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/back"
         android:backgroundTint="@color/Black"
@@ -40,7 +40,7 @@
         android:layout_marginTop="@dimen/_7sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Please fillup all the boxes below with correct information"
+        android:text="@string/please_fillup_all_the_boxes_below_with_correct_information"
         android:textColor="@color/Black"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         android:layout_marginTop="@dimen/_7sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Types of Soil"
+        android:text="@string/types_of_soil"
         android:textColor="@color/Black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:src="@drawable/soil_icon">
 
@@ -90,7 +90,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -103,7 +103,7 @@
             android:background="@null"
             android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Enter Types of Soil"
+            android:hint="@string/enter_types_of_soil"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -118,7 +118,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
             android:padding="@dimen/_4sdp"
             android:src="@drawable/dropdown">
 
@@ -134,7 +134,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Temperature"
+        android:text="@string/temperature"
         android:textColor="@color/Black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +157,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:src="@drawable/temperature">
 
@@ -167,7 +167,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -179,7 +179,7 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Enter Temperature"
+            android:hint="@string/enter_temperature"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -201,7 +201,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Place"
+        android:text="@string/place"
         android:textColor="@color/Black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -224,7 +224,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:src="@drawable/location_logo">
 
@@ -234,7 +234,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -246,7 +246,7 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:background="@null"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Ex: Upazilla/P.S. , District"
+            android:hint="@string/ex_upazilla_p_s_district"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -267,7 +267,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Water Supply"
+        android:text="@string/water_supply"
         android:textColor="@color/Black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -290,7 +290,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:src="@drawable/water_drop">
 
@@ -300,7 +300,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -313,7 +313,7 @@
             android:background="@null"
             android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Amount of Water Supply"
+            android:hint="@string/amount_of_water_supply"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -328,7 +328,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
             android:padding="@dimen/_4sdp"
             android:src="@drawable/dropdown">
 
@@ -344,7 +344,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Sunlight"
+        android:text="@string/sunlight"
         android:textColor="@color/Black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -367,7 +367,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:src="@drawable/sun_icon">
 
@@ -377,7 +377,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -390,7 +390,7 @@
             android:background="@null"
             android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Amount of Sunlight"
+            android:hint="@string/amount_of_sunlight"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -405,7 +405,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
             android:padding="@dimen/_4sdp"
             android:src="@drawable/dropdown">
 
@@ -420,7 +420,7 @@
         android:layout_marginStart="@dimen/_7sdp"
         android:layout_marginTop="@dimen/_12sdp"
         android:fontFamily="@font/ubuntu_regular"
-        android:text="Optional"
+        android:text="@string/optional"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputSunlightLayout" />
@@ -445,7 +445,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Types of Plant"
+        android:text="@string/types_of_plant"
         android:textColor="@color/Black"
         android:textSize="@dimen/_15ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -455,7 +455,7 @@
     </TextView>
 
     <LinearLayout
-        android:id="@+id/inputPlantLayout"
+        android:id="@+id/reminderPlantLayout"
         android:layout_width="@dimen/_282sdp"
         android:layout_height="@dimen/_42sdp"
         android:layout_marginTop="@dimen/_5sdp"
@@ -468,7 +468,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:alpha="1"
             android:padding="@dimen/_2sdp"
             android:src="@drawable/tree_icon">
@@ -479,7 +479,7 @@
             android:layout_width="@dimen/_2sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:background="@color/colorAsh">
 
         </View>
@@ -492,7 +492,7 @@
             android:background="@null"
             android:focusable="false"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="Enter Types of Plant"
+            android:hint="@string/enter_types_of_plant"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -507,7 +507,7 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
             android:padding="@dimen/_4sdp"
             android:src="@drawable/dropdown">
 
@@ -523,7 +523,7 @@
         android:animateLayoutChanges="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputPlantLayout">
+        app:layout_constraintTop_toBottomOf="@id/reminderPlantLayout">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/chooseTreeSubmitButton"
@@ -532,7 +532,7 @@
             android:layout_gravity="center"
             android:background="@drawable/button_bg_2"
             android:fontFamily="@font/ubuntu_bold"
-            android:text="Submit"
+            android:text="@string/submit"
             android:textAllCaps="false"
             android:textSize="@dimen/_21sdp">
 
@@ -544,7 +544,7 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_gravity="center"
             android:progressTint="@color/colorPrimary"
-            android:visibility="invisible"></ProgressBar>
+            android:visibility="invisible"/>
 
     </FrameLayout>
 

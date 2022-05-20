@@ -6,7 +6,7 @@
     android:clipToPadding="false"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".activity.EditProfileActivity">
+    tools:context=".codebase.activity.EditProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Full Name">
+                android:hint="@string/full_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                     android:drawablePadding="@dimen/_13sdp"
                     android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="Towhid Soyon">
+                    android:text="@string/towhid_soyon">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -115,7 +115,7 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Email">
+                android:hint="@string/email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -126,7 +126,7 @@
                     android:drawablePadding="@dimen/_10sdp"
                     android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="towhid12728@gmail.com">
+                    android:text="@string/towhid12728_gmail_com">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -138,7 +138,7 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Phone No.">
+                android:hint="@string/phone_no">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -149,7 +149,7 @@
                     android:drawablePadding="@dimen/_10sdp"
                     android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="01766755346">
+                    android:text="@string/_01766755346">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -161,7 +161,7 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Address">
+                android:hint="@string/address">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -172,7 +172,7 @@
                     android:drawablePadding="@dimen/_10sdp"
                     android:textCursorDrawable="@drawable/text_cursor"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="Dhaka, Bangladesh">
+                    android:text="@string/dhaka_bangladesh">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -189,7 +189,7 @@
             android:layout_marginTop="@dimen/_17sdp"
             android:background="@drawable/button_bg_2"
             android:fontFamily="@font/ubuntu_bold"
-            android:text="Done"
+            android:text="@string/done"
             android:textSize="@dimen/_21sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

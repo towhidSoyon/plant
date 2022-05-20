@@ -6,10 +6,9 @@
     android:clipToPadding="false"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".activity.ProfileActivity">
+    tools:context=".codebase.activity.ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBackground">
@@ -45,7 +44,7 @@
             android:id="@+id/backArrow"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_25sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/back"
             android:backgroundTint="@color/Black"
@@ -80,17 +79,17 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Full Name">
+                android:hint="@string/full_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
                     android:background="@drawable/edit_text_bg_3"
-                    android:drawableLeft="@drawable/profile_logo"
+                    android:drawableStart="@drawable/profile_logo"
                     android:drawablePadding="@dimen/_13sdp"
                     android:focusable="false"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="Towhid Soyon">
+                    android:text="@string/towhid_soyon">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -102,17 +101,17 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Email">
+                android:hint="@string/email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
                     android:background="@drawable/edit_text_bg_3"
-                    android:drawableLeft="@drawable/mail"
+                    android:drawableStart="@drawable/mail"
                     android:drawablePadding="@dimen/_10sdp"
                     android:focusable="false"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="towhid12728@gmail.com">
+                    android:text="@string/towhid12728_gmail_com">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -124,17 +123,17 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Phone No.">
+                android:hint="@string/phone_no">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
                     android:background="@drawable/edit_text_bg_3"
-                    android:drawableLeft="@drawable/call_black"
+                    android:drawableStart="@drawable/call_black"
                     android:drawablePadding="@dimen/_10sdp"
                     android:focusable="false"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="01521733203">
+                    android:text="@string/_01521733203">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -146,17 +145,17 @@
                 android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:hint="Address">
+                android:hint="@string/address">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
                     android:background="@drawable/edit_text_bg_3"
-                    android:drawableLeft="@drawable/location_logo"
+                    android:drawableStart="@drawable/location_logo"
                     android:drawablePadding="@dimen/_10sdp"
                     android:focusable="false"
                     android:fontFamily="@font/ubuntu_regular"
-                    android:text="Dhaka, Bangladesh">
+                    android:text="@string/dhaka_bangladesh">
 
                 </com.google.android.material.textfield.TextInputEditText>
 

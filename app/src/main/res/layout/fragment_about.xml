@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".activity.fragment.AboutFragment">
+    tools:context=".codebase.fragment.AboutFragment">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -79,7 +79,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_10sdp"
-                        android:text="Towhid Soyon"
+                        android:text="@string/towhid_soyon"
                         android:fontFamily="@font/ubuntu_bold"
                         android:textAlignment="center"
                         android:textColor="@color/Black"
@@ -90,7 +90,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_10sdp"
-                        android:text="Android Developer"
+                        android:text="@string/android_developer"
                         android:fontFamily="@font/ubuntu_medium"
                         android:textAlignment="center"
                         android:textColor="@color/Black"
@@ -104,10 +104,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/_10sdp"
-                android:text="Details"
+                android:text="@string/details_about"
                 android:fontFamily="@font/ubuntu_medium"
                 android:textColor="@color/Black"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_15ssp"
+                tools:ignore="RtlSymmetry" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -132,7 +133,8 @@
                         android:text="@string/details"
                         android:textColor="@color/Black"
                         android:textSize="@dimen/_14ssp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -141,10 +143,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/_10sdp"
-                android:text="Contact Info"
+                android:text="@string/contact_info"
                 android:fontFamily="@font/ubuntu_medium"
                 android:textColor="@color/Black"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_15ssp"
+                tools:ignore="RtlSymmetry" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

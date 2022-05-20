@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activity.ChooseLoginOrSignupActivity">
+    tools:context=".codebase.activity.ChooseLoginOrSignupActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -37,7 +37,7 @@
         android:layout_height="@dimen/_42sdp"
         android:background="@drawable/button_bg_1"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Login"
+        android:text="@string/login"
         android:textSize="@dimen/_21ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:layout_marginTop="@dimen/_18sdp"
         android:background="@drawable/button_bg_1"
         android:fontFamily="@font/ubuntu_bold"
-        android:text="Signup"
+        android:text="@string/signup"
         android:textSize="@dimen/_21ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
         android:layout_height="@dimen/_12sdp"
         android:layout_marginBottom="@dimen/_22sdp"
         android:fontFamily="@font/ubuntu_regular"
-        android:text="All rights reserved by plant"
+        android:text="@string/all_rights_reserved_by_plant"
         android:textAlignment="center"
         android:textSize="@dimen/_9ssp"
         app:layout_constraintBottom_toBottomOf="parent"

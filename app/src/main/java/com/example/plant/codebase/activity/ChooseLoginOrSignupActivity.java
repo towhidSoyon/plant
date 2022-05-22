@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.plant.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +24,7 @@ public class ChooseLoginOrSignupActivity extends AppCompatActivity {
 
         findSection();
 
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +48,13 @@ public class ChooseLoginOrSignupActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         if (mAuth.getCurrentUser() != null){
-            startActivity(new Intent(ChooseLoginOrSignupActivity.this, MainActivity.class));
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
             finish();
         }
+
     }
 
     private void findSection() {

@@ -1,5 +1,6 @@
 package com.example.plant.codebase.utilities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +17,7 @@ public class LanguageManager {
     private Context ct;
     private SharedPreferences sharedPreferences;
 
+    private Activity activity;
     public LanguageManager(Context ctx) {
         ct = ctx;
         sharedPreferences = ct.getSharedPreferences("LANG",Context.MODE_PRIVATE);
@@ -27,11 +29,14 @@ public class LanguageManager {
         Resources resources = ct.getResources();
         Configuration configuration = resources.getConfiguration();
         configuration.locale = locale;
-        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+       // resources.updateConfiguration(configuration, resources.getDisplayMetrics());
         setLang(code);
 
+    }
 
 
+    public  void  recreateActivity(Activity activity){
+        activity.recreate();
     }
 
     public String getLang(){

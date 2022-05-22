@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Project/plant/app/src/main/res/drawable/text_cursor.xml" value="0.185" />
+        <entry key="..\:/Android Project/plant/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/Android Project/plant/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/add_blog_button_bg.xml" value="0.3106837606837607" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/background_dialog.xml" value="0.3067510548523207" />
         <entry key="..\:/workOfAndroid/Plant/app/src/main/res/drawable/blog_item_bg.xml" value="0.3067510548523207" />

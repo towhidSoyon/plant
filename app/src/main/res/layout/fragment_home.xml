@@ -119,7 +119,7 @@
                 app:sliderIndicatorOrientation="horizontal"
                 app:sliderIndicatorPadding="3dp"
                 app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorSelectedColor="@color/colorPrimary"
                 app:sliderIndicatorUnselectedColor="#FFF"
                 app:sliderScrollTimeInSec="1"
                 app:sliderStartAutoCycle="true" />
@@ -180,14 +180,27 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/weatherImage"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/_22sdp"
-                android:src="@drawable/sunny">
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/weatherImage"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/sunny"/>
+                <ProgressBar
+                    android:id="@+id/weatherProgressLoading"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/_20sdp"
+                    android:layout_height="match_parent"
+                    android:indeterminate="true"
+                    android:visibility="visible"
+                    android:indeterminateTint="@color/colorPrimary"
+                    />
+            </FrameLayout>
 
-            </ImageView>
+
 
         </LinearLayout>
 

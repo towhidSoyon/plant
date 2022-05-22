@@ -23,6 +23,7 @@ import com.example.plant.codebase.fragment.AboutFragment;
 import com.example.plant.codebase.fragment.BlogFragment;
 import com.example.plant.codebase.fragment.ContactFragment;
 import com.example.plant.codebase.fragment.HomeFragment;
+import com.example.plant.codebase.network.model.Main;
 import com.example.plant.codebase.utilities.Constants;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompat {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+        setFragment(new HomeFragment());
         navigationView.setCheckedItem(R.id.nav_home);
 
         View navView =  navigationView.inflateHeaderView(R.layout.nav_header_main);
@@ -126,28 +127,45 @@ public class MainActivity extends AppCompat {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_home:
                         temp = new HomeFragment();
+                        setFragment(temp);
                         break;
                     case R.id.nav_blog:
                         temp = new BlogFragment();
+                        setFragment(temp);
+
                         break;
                     case R.id.nav_contacts:
                         temp = new ContactFragment();
+                        setFragment(temp);
+
                         break;
                     case R.id.nav_about:
                         temp = new AboutFragment();
+                        setFragment(temp);
+
                         break;
                     case R.id.nav_logout:
                         firebaseAuth.signOut();
-                        startActivity(new Intent(getApplicationContext(), ChooseLoginOrSignupActivity.class));
+                        Intent intent = new Intent(MainActivity.this,ChooseLoginOrSignupActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
                         finish();
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
+
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
+
             }
+
         });
 
 
+    }
+    private void setFragment(Fragment fragment){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
     }
 
     private void initToolbar() {
@@ -182,6 +200,8 @@ public class MainActivity extends AppCompat {
         });
 
     }
+
+
 
     public void showDialog() {
 

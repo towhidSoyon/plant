@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_7sdp"
         android:fontFamily="@font/ubuntu_medium"
         android:text="@string/please_fillup_all_the_boxes_below_with_correct_information"
@@ -251,7 +251,7 @@
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
-            android:inputType="date"
+            android:inputType="text|number"
             android:textColor="@color/Black"
             android:textColorHint="@color/colorTextHint"
             android:textSize="@dimen/_13ssp">

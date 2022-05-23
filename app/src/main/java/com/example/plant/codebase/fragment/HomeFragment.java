@@ -71,9 +71,6 @@ public class HomeFragment extends Fragment {
     private ProgressBar progressBar;
     private TextView nameOfCity;
 
-    private AppCompatButton languageBangla;
-    private AppCompatButton languageEng;
-
     private ImageView weatherImage;
 
     private DatabaseReference SlideRef;
@@ -97,8 +94,7 @@ public class HomeFragment extends Fragment {
 
         weatherImage = view.findViewById(R.id.weatherImage);
 
-        languageBangla = view.findViewById(R.id.languageButtonBangla);
-        languageEng = view.findViewById(R.id.languageButtonEng);
+
 
         layoutChooseTree = view.findViewById(R.id.layout_choose_tree);
         layoutSuggestTree = view.findViewById(R.id.layout_suggest_tree);
@@ -164,26 +160,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        LanguageManager languageManager = new LanguageManager(getContext());
 
-        languageEng.setBackgroundResource(R.drawable.button_bg_7);
-
-
-        languageBangla.setOnClickListener(view1 -> {
-            languageBangla.setBackgroundResource(R.drawable.button_bg_6);
-            languageEng.setBackgroundResource(R.drawable.button_bg_5);
-
-            languageManager.updateResource("bn");
-
-        });
-
-        languageEng.setOnClickListener(view12 -> {
-            languageEng.setBackgroundResource(R.drawable.button_bg_7);
-            languageBangla.setBackgroundResource(R.drawable.button_bg_4);
-
-            languageManager.updateResource("en");
-
-        });
 
         layoutChooseTree.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -284,22 +261,9 @@ public class HomeFragment extends Fragment {
     public void onStart() {
         super.onStart();
         getWeatherResponse();
-        updateLanguageState();
     }
 
-    public void updateLanguageState(){
-        LanguageManager languageManager = new LanguageManager(getContext());
 
-        if (languageManager.getLang().equals("en")){
-            languageEng.setBackgroundResource(R.drawable.button_bg_7);
-            languageBangla.setBackgroundResource(R.drawable.button_bg_4);
-        }else {
-
-            languageBangla.setBackgroundResource(R.drawable.button_bg_6);
-            languageEng.setBackgroundResource(R.drawable.button_bg_5);
-
-        }
-    }
     public void showToast(String Message) {
         Toast.makeText(getContext(), Message, Toast.LENGTH_SHORT).show();
     }

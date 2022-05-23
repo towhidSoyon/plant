@@ -5,7 +5,6 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,9 +25,9 @@ public class SuggestedTreeActivity extends AppCompatActivity  {
     AppCompatButton fruitPlantButton;
     AppCompatButton flowerPlantButton;
     AppCompatButton brinjalPlantButton;
-    AppCompatButton b3PlantButton;
+   /* AppCompatButton b3PlantButton;
     AppCompatButton b4PlantButton;
-    AppCompatButton b5PlantButton;
+    AppCompatButton b5PlantButton;*/
 
     FirebaseFirestore firebaseFirestore;
     FirebaseDatabase firebaseDatabase;
@@ -51,56 +50,41 @@ public class SuggestedTreeActivity extends AppCompatActivity  {
 
         /*getSuggestedTree();*/
 
-        medicinePlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        medicinePlantButton.setOnClickListener(view -> {
 
-                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
-                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, medicinePlantButton.getText().toString() );
-                startActivity(intent);
+            Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+            intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, medicinePlantButton.getText().toString() );
+            startActivity(intent);
 
-            }
         });
 
-        acPlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        acPlantButton.setOnClickListener(view -> {
 
-                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
-                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, acPlantButton.getText().toString() );
-                startActivity(intent);
+            Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+            intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, acPlantButton.getText().toString() );
+            startActivity(intent);
 
-            }
         });
 
-        fruitPlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
-                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, fruitPlantButton.getText().toString() );
-                startActivity(intent);
-            }
+        fruitPlantButton.setOnClickListener(view -> {
+            Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+            intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, fruitPlantButton.getText().toString() );
+            startActivity(intent);
         });
 
-        flowerPlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
-                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, flowerPlantButton.getText().toString() );
-                startActivity(intent);
-            }
+        flowerPlantButton.setOnClickListener(view -> {
+            Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+            intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, flowerPlantButton.getText().toString() );
+            startActivity(intent);
         });
 
-        brinjalPlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
-                intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, brinjalPlantButton.getText().toString() );
-                startActivity(intent);
-            }
+        brinjalPlantButton.setOnClickListener(view -> {
+            Intent intent=new Intent(getApplicationContext(), SuggestedTreeDetailsActivity.class);
+            intent.putExtra(Constants.KEY_SUGGESTED_TREE_RESULT, brinjalPlantButton.getText().toString() );
+            startActivity(intent);
         });
 
-        b3PlantButton.setOnClickListener(new View.OnClickListener() {
+        /*b3PlantButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showToast("Will be added soon");
@@ -119,7 +103,7 @@ public class SuggestedTreeActivity extends AppCompatActivity  {
             public void onClick(View view) {
                 showToast("Will be added soon");
             }
-        });
+        });*/
 
 
     }
@@ -163,9 +147,9 @@ public class SuggestedTreeActivity extends AppCompatActivity  {
         fruitPlantButton = findViewById(R.id.buttonFruitPlant);
         flowerPlantButton = findViewById(R.id.buttonFlowerPlant);
         brinjalPlantButton = findViewById(R.id.brinjalPlant);
-        b3PlantButton = findViewById(R.id.button3Plant);
+        /*b3PlantButton = findViewById(R.id.button3Plant);
         b4PlantButton = findViewById(R.id.button4Plant);
-        b5PlantButton = findViewById(R.id.button5Plant);
+        b5PlantButton = findViewById(R.id.button5Plant);*/
     }
 
 

@@ -58,13 +58,6 @@ public class MainActivity extends AppCompat {
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        /*if (firebaseAuth.getCurrentUser() == null){
-            startActivity(new Intent(getApplicationContext(),ChooseLoginOrSignupActivity.class));
-            finish();
-        }*/
-
-
-
         initToolbar();
 
         navigationView = findViewById(R.id.nav_view);
@@ -90,9 +83,6 @@ public class MainActivity extends AppCompat {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     String img = task.getResult().get("image").toString();
-                    /*byte[] bytes = Base64.decode(img, Base64.DEFAULT);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    headerImage.setImageBitmap(bitmap);*/
                     Picasso.get().load(img).into(headerImage);
                 }
             }
@@ -118,7 +108,6 @@ public class MainActivity extends AppCompat {
             }
         });
 
-
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             Fragment temp;
@@ -143,6 +132,10 @@ public class MainActivity extends AppCompat {
                         temp = new AboutFragment();
                         setFragment(temp);
 
+                        break;
+                    case R.id.nav_settings:
+                        Intent newIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                        startActivity(newIntent);
                         break;
                     case R.id.nav_logout:
                         firebaseAuth.signOut();
@@ -184,20 +177,12 @@ public class MainActivity extends AppCompat {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     String img = task.getResult().get("image").toString();
-                    /*byte[] bytes = Base64.decode(img, Base64.DEFAULT);
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                    profileImage.setImageBitmap(bitmap);*/
                     Picasso.get().load(img).into(profileImage);
                 }
             }
         });
 
-        profileImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showDialog();
-            }
-        });
+        profileImage.setOnClickListener(view -> showDialog());
 
     }
 
@@ -213,21 +198,15 @@ public class MainActivity extends AppCompat {
         LinearLayout editProfile = dialog.findViewById(R.id.editProfile);
 
 
-        viewProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+        viewProfile.setOnClickListener(v -> {
+            dialog.dismiss();
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
 
-            }
         });
 
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                startActivity(new Intent(MainActivity.this, EditProfileActivity.class));
-            }
+        editProfile.setOnClickListener(v -> {
+            dialog.dismiss();
+            startActivity(new Intent(MainActivity.this, EditProfileActivity.class));
         });
 
         dialog.show();
